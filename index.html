@@ -69,11 +69,11 @@ var CONFIG = {
   disciplinas: [
 
     {
-      codigo:  "[PREENCHER] código do fluxograma",
+      codigo:  "CAP06-08897",
       nome:    "Práticas Pedagógicas de Matemática I",
       periodo: "2026.1",
-      turma:   "Licenciatura em Matemática",
-      horario: "Segundas, 18h–19h30 · Terças, 10h40–12h30",
+      turma:   "Licenciatura em Matemática — duas turmas",
+      horario: "Turma de segunda, 18h–19h30 · Turma de terça, 10h40–12h30",
       sala:    "",   // preencha quando souber a sala de aula; vazio = não aparece
       resumo:  "Aprofundamento pedagógico dos conteúdos matemáticos do Ensino Fundamental, nas vertentes teórica, prática e metodológica.",
 
@@ -98,44 +98,45 @@ var CONFIG = {
         "BRASIL. Base Nacional Comum Curricular. Brasília: MEC, 2018."
       ],
 
-      // Cronograma 2026.1 — segundas e terças, de 10/08 a 20/10.
-      // Em "tipo" você pode escrever "feriado" ou "exame" para a linha ficar
-      // destacada. Sem "tipo", a linha é uma aula normal.
-      cronograma: [
-        { data: "10/08", tema: "Apresentação da disciplina, do plano de trabalho e dos critérios de avaliação. O conhecimento especializado do professor de Matemática" },
-        { data: "11/08", tema: "Conhecimento especializado, continuação: dos processos mentais da pré-escola à alfabetização matemática e a passagem para os anos finais" },
+      // São DUAS turmas, cada uma com seu calendário. Cada bloco abaixo
+      // vira uma tabela na página da disciplina.
+      // Em "tipo" você pode escrever "feriado" ou "exame" para destacar a linha.
+      cronogramas: [
 
-        { data: "17/08", tema: "Os sentidos da soma e da subtração I: as ideias por trás das operações" },
-        { data: "18/08", tema: "Os sentidos da soma e da subtração II: problemas, erros recorrentes e progressão didática" },
+        { titulo: "Turma de segunda-feira — 18h às 19h30",
+          aulas: [
+            { data: "10/08", tema: "Apresentação da disciplina, do plano de trabalho e dos critérios de avaliação. O conhecimento especializado do professor de Matemática" },
+            { data: "17/08", tema: "Os sentidos da soma e da subtração" },
+            { data: "24/08", tema: "Os sentidos da multiplicação" },
+            { data: "31/08", tema: "Os sentidos da divisão" },
+            { data: "07/09", tema: "Independência do Brasil — não há aula", tipo: "feriado" },
+            { data: "14/09", tema: "O conjunto dos números inteiros" },
+            { data: "21/09", tema: "Razão e proporção nos anos finais. O conjunto dos números racionais" },
+            { data: "28/09", tema: "O salto algébrico" },
+            { data: "05/10", tema: "Sistemas de equações. Estatística e probabilidade nos anos finais" },
+            { data: "12/10", tema: "Nossa Senhora Aparecida — não há aula", tipo: "feriado" },
+            { data: "19/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
+            { data: "26/10", tema: "Exame final", tipo: "exame" }
+          ]
+        },
 
-        { data: "24/08", tema: "Os sentidos da multiplicação I: da adição de parcelas iguais à ideia multiplicativa" },
-        { data: "25/08", tema: "Os sentidos da multiplicação II: proporcionalidade, configuração retangular e combinatória" },
+        { titulo: "Turma de terça-feira — 10h40 às 12h30",
+          aulas: [
+            { data: "11/08", tema: "Apresentação da disciplina, do plano de trabalho e dos critérios de avaliação. O conhecimento especializado do professor de Matemática" },
+            { data: "18/08", tema: "Os sentidos da soma e da subtração" },
+            { data: "25/08", tema: "Os sentidos da multiplicação" },
+            { data: "01/09", tema: "Os sentidos da divisão" },
+            { data: "08/09", tema: "O conjunto dos números inteiros" },
+            { data: "15/09", tema: "Razão e proporção nos anos finais" },
+            { data: "22/09", tema: "O conjunto dos números racionais" },
+            { data: "29/09", tema: "O salto algébrico" },
+            { data: "06/10", tema: "Sistemas de equações" },
+            { data: "13/10", tema: "Estatística e probabilidade nos anos finais" },
+            { data: "20/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
+            { data: "27/10", tema: "Exame final", tipo: "exame" }
+          ]
+        }
 
-        { data: "31/08", tema: "Os sentidos da divisão I: partição e medida" },
-        { data: "01/09", tema: "Os sentidos da divisão II: o resto e seus significados, e a ponte para as frações" },
-
-        { data: "07/09", tema: "Independência do Brasil — não há aula", tipo: "feriado" },
-        { data: "08/09", tema: "O conjunto dos números inteiros I: a necessidade do número negativo" },
-
-        { data: "14/09", tema: "O conjunto dos números inteiros II: operações com inteiros e os obstáculos de aprendizagem" },
-        { data: "15/09", tema: "Razão e proporção nos anos finais" },
-
-        { data: "21/09", tema: "O conjunto dos números racionais I: frações e decimais, e as múltiplas representações" },
-        { data: "22/09", tema: "O conjunto dos números racionais II: comparação, densidade e obstáculos didáticos" },
-
-        { data: "28/09", tema: "O salto algébrico I: da aritmética à álgebra — a letra como incógnita e como variável" },
-        { data: "29/09", tema: "O salto algébrico II: equações do 1º grau e a leitura de expressões algébricas" },
-
-        { data: "05/10", tema: "Sistemas de equações" },
-        { data: "06/10", tema: "Estatística e probabilidade nos anos finais: produção e leitura de dados, medidas, gráficos e a noção de acaso" },
-
-        { data: "12/10", tema: "Nossa Senhora Aparecida — não há aula", tipo: "feriado" },
-        { data: "13/10", tema: "Teorema de Pitágoras" },
-
-        { data: "19/10", tema: "Equação do 2º grau I: da situação-problema à equação — fatoração, completar quadrados e o sentido das raízes" },
-        { data: "20/10", tema: "Equação do 2º grau II: dedução da fórmula resolutiva, discriminante e interpretação das soluções. Encerramento do semestre" },
-
-        { data: "27/10", tema: "Exame final", tipo: "exame" }
       ],
 
       // Arquivos para os alunos baixarem.
@@ -344,6 +345,9 @@ var CONFIG = {
   th{background:#F7F0DE;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ambar-escuro);font-weight:700;
      border-bottom:2px solid var(--ambar)}
   td:first-child{white-space:nowrap;color:var(--cinza);width:1%}
+  .subcron{margin:24px 0 8px;font-weight:700;font-size:15px;color:var(--azul);
+    border-left:4px solid var(--ambar);padding-left:10px}
+  table + .subcron{margin-top:34px}
   tr.feriado td{background:#F6F2E8;color:var(--cinza);font-style:italic}
   tr.exame td{background:#FFF3D4;font-weight:700;color:var(--ambar-escuro)}
   tr.exame td:first-child{color:var(--ambar-escuro)}
@@ -506,11 +510,18 @@ var CONFIG = {
     if ((d.objetivos||[]).length)
       h += '<h3>Objetivos</h3><ul class="lista">' + d.objetivos.map(o => '<li>' + e(o) + '</li>').join("") + '</ul>';
     if (d.avaliacao) h += '<h3>Avaliação</h3><p>' + e(d.avaliacao) + '</p>';
-    if ((d.cronograma||[]).length)
-      h += '<h3>Cronograma de aulas</h3><table><thead><tr><th>Encontro</th><th>Tema</th></tr></thead><tbody>' +
-           d.cronograma.map(a => '<tr' + (a.tipo ? ' class="' + e(a.tipo) + '"' : '') + '>' +
-             '<td>' + e(a.data) + '</td><td>' + e(a.tema) + '</td></tr>').join("") +
-           '</tbody></table>';
+    // Aceita "cronogramas" (várias turmas) ou "cronograma" (uma só).
+    const crons = d.cronogramas || (d.cronograma ? [{ aulas: d.cronograma }] : []);
+    if (crons.length){
+      h += '<h3>Cronograma de aulas</h3>';
+      crons.forEach(function(c){
+        if (c.titulo) h += '<p class="subcron">' + e(c.titulo) + '</p>';
+        h += '<table><thead><tr><th>Encontro</th><th>Tema</th></tr></thead><tbody>' +
+             (c.aulas||[]).map(a => '<tr' + (a.tipo ? ' class="' + e(a.tipo) + '"' : '') + '>' +
+               '<td>' + e(a.data) + '</td><td>' + e(a.tema) + '</td></tr>').join("") +
+             '</tbody></table>';
+      });
+    }
     if ((d.bibliografia||[]).length)
       h += '<h3>Bibliografia</h3><ol class="refs">' + d.bibliografia.map(b => '<li>' + e(b) + '</li>').join("") + '</ol>';
     if ((d.materiais||[]).length)
