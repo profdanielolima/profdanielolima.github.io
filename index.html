@@ -70,16 +70,9 @@ var CONFIG = {
   /*    Para apagar um aviso, apague o bloco { ... }, inclusive a vírgula*/
   /* ------------------------------------------------------------------ */
   avisos: [
-    {
-      data:  "24/08/2026",
-      titulo:"Turma 2D — trabalho no lugar do Teste 1",
-      texto: "A turma 2D fará um trabalho em vez do Teste 1. Em grupos de até 4 alunos, com entrega na segunda-feira, 31/08. A proposta completa está na aba Materiais, no bloco da Turma 2D."
-    },
-    {
-      data:  "24/08/2026",
-      titulo:"Geometria 2B e 2D — prova do 1º trimestre em 31/08",
-      texto: "A prova do 1º trimestre será em 31/08, dentro da Semana de Provas (31/08 a 05/09). A lista de revisão e o gabarito comentado já estão disponíveis na aba Materiais."
-    },
+    // Os dois avisos das turmas 2B e 2D do CAp foram retirados junto com a
+    // disciplina. O texto deles está guardado no fim deste arquivo, num
+    // comentário, caso queira republicar.
     {
       data:  "12/08/2026",
       titulo:"Turma de terça — plano de aula sobre a subtração",
@@ -270,6 +263,14 @@ var CONFIG = {
     /*  (planilha "Geometria Espacial (replanejado pos-greve)", 21/08).    */
     /* ------------------------------------------------------------------ */
     {
+      // ----------------------------------------------------------------
+      // OCULTA a pedido. Nada foi apagado: conteúdo programático,
+      // calendário de avaliações e a lista de materiais continuam aqui.
+      // Para voltar ao ar, troque true por false — e lembre de subir os
+      // PDFs de novo para a pasta materiais-CAp.
+      // ----------------------------------------------------------------
+      oculto: true,
+
       instituicao: "Ensino Médio — CAp-UERJ",
       codigo:  "",
       nome:    "Geometria Espacial",
@@ -322,7 +323,6 @@ var CONFIG = {
 
         { titulo: "Para as duas turmas",
           itens: [
-            { titulo: "Apostila — Geometria Espacial",                         arquivo: "geo-apostila-espacial.pdf" },
             { titulo: "Lista de revisão 2B e 2D (24/08)",                      arquivo: "geo-lista-revisao-24-08.pdf" },
             { titulo: "Lista de revisão 2B e 2D (24/08) — gabarito comentado", arquivo: "geo-lista-revisao-24-08-gabarito.pdf" },
             { titulo: "Teste 1 — modelos A a D (aplicado na turma 2B)",        arquivo: "geo-teste1-modelos.pdf" }
@@ -426,6 +426,24 @@ var CONFIG = {
   /* ------------------------------------------------------------------ */
   rodape: "Daniel de Oliveira Lima — Universidade do Estado do Rio de Janeiro."
 };
+
+/* --------------------------------------------------------------------
+   AVISOS DO CAp GUARDADOS (retirados do ar a pedido)
+
+   Para republicar, recorte os dois blocos abaixo e cole de volta dentro
+   de  avisos: [ ... ]  , lembrando das vírgulas entre eles.
+
+   {
+     data:  "24/08/2026",
+     titulo:"Turma 2D — trabalho no lugar do Teste 1",
+     texto: "A turma 2D fará um trabalho em vez do Teste 1. Em grupos de até 4 alunos, com entrega na segunda-feira, 31/08. A proposta completa está na aba Materiais, no bloco da Turma 2D."
+   },
+   {
+     data:  "24/08/2026",
+     titulo:"Geometria 2B e 2D — prova do 1º trimestre em 31/08",
+     texto: "A prova do 1º trimestre será em 31/08, dentro da Semana de Provas (31/08 a 05/09). A lista de revisão e o gabarito comentado já estão disponíveis na aba Materiais."
+   }
+-------------------------------------------------------------------- */
 </script>
 
 <!-- ==================================================================== -->
