@@ -24,6 +24,16 @@
 var CONFIG = {
 
   /* ------------------------------------------------------------------ */
+  /* 0. PASTA DOS ARQUIVOS                                               */
+  /*                                                                     */
+  /*    Nome da pasta, no site, onde ficam os PDFs. Precisa ser IGUAL    */
+  /*    ao nome da pasta que está no GitHub — maiúsculas e hífens        */
+  /*    inclusive. Hoje é "materiais-CAp".                               */
+  /* ------------------------------------------------------------------ */
+  pastaMateriais: "materiais-CAp",
+
+
+  /* ------------------------------------------------------------------ */
   /* 1. SEUS DADOS                                                       */
   /* ------------------------------------------------------------------ */
   professor: {
@@ -696,7 +706,9 @@ var CONFIG = {
 
   /* ---------- helpers ---------- */
   function linkMaterial(m){
-    const alvo = /^https?:\/\//i.test(m.arquivo || "") ? m.arquivo : "materiais/" + (m.arquivo || "");
+    const pasta = (C.pastaMateriais || "materiais").replace(/\/+$/, "");
+    const alvo = /^https?:\/\//i.test(m.arquivo || "") ? m.arquivo
+               : pasta + "/" + (m.arquivo || "");
     const externo = /^https?:\/\//i.test(m.arquivo || "");
     const ext = externo ? "LINK" : ((m.arquivo || "").split(".").pop() || "arq").toUpperCase().slice(0,4);
     return '<a class="baixar" href="' + e(alvo) + '" target="_blank" rel="noopener">' +
