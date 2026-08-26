@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disciplinas — UERJ</title>
+
+<!-- ==================================================================== -->
+<!--                                                                      -->
+<!--   ÁREA DE EDIÇÃO — É AQUI QUE VOCÊ MEXE.                             -->
+<!--                                                                      -->
+<!--   Tudo o que aparece no site está escrito abaixo, entre aspas.       -->
+<!--   Para mudar o site, troque SÓ o texto que está entre aspas.         -->
+<!--                                                                      -->
+<!--   3 regras, e o site nunca quebra:                                   -->
+<!--     1. Nunca apague as aspas " " nem as vírgulas do fim da linha.    -->
+<!--     2. Se o seu texto tiver aspas, use aspas simples: 'assim'.       -->
+<!--     3. Linhas que começam com  //  são recados para você.            -->
+<!--        O site ignora elas.                                           -->
+<!--                                                                      -->
+<!-- ==================================================================== -->
+
+<script>
+var CONFIG = {
+
+  /* ------------------------------------------------------------------ */
+  /* 1. SEUS DADOS                                                       */
+  /* ------------------------------------------------------------------ */
+  professor: {
+    nome:       "Prof. Dr. Daniel de Oliveira Lima",
+    cargo:      "Professor Adjunto",
+    unidade:    "Instituto de Aplicação Fernando Rodrigues da Silveira — CAp-UERJ",
+    email:      "danielprof2006@gmail.com",   // se preferir, troque pelo seu e-mail institucional da UERJ
+    sala:       "Sala 6016 — Campus Maracanã",
+    atendimento:"",   // vazio = a linha some do site. Preencha se quiser divulgar um horário fixo.
+    lattes:     "",   // não use mais este campo; os links agora ficam na lista abaixo
+
+    // Seus links públicos. Viram botões na página "Sobre" e links no rodapé.
+    // Para acrescentar outro, copie uma linha inteira e cole abaixo,
+    // lembrando da vírgula no fim da linha anterior.
+    links: [
+      { titulo: "Currículo Lattes", url: "http://lattes.cnpq.br/8112943098112623" },
+      { titulo: "Medium",           url: "https://medium.com/@danielprof2006" },
+      { titulo: "LinkedIn",         url: "https://www.linkedin.com/in/daniel-de-oliveira-lima-06406654/" }
+    ],
+
+    // A apresentação da página "Sobre". Cada texto entre aspas vira um parágrafo.
+    // Para acrescentar outro, copie uma linha inteira e cole abaixo, com vírgula no fim.
+    bio: [
+      "Sou licenciado em Matemática pela UERJ, mestre em Matemática pela UFRJ, no âmbito do PROFMAT, e doutor em Ensino e História da Matemática e da Física pela UFRJ, pelo PEMAT.",
+      "Atuo como Professor Adjunto no Instituto de Aplicação Fernando Rodrigues da Silveira, o CAp-UERJ, onde trabalho na formação inicial de professores de Matemática — tanto no aprofundamento pedagógico dos conteúdos da educação básica quanto no acompanhamento dos licenciandos durante o estágio supervisionado.",
+      "Escrevo no Medium sobre educação matemática e formação docente, incluindo as questões de raça, identidade e poder que atravessam o ensino de Matemática. O link está no fim desta página e no rodapé do site.",
+
+      "Para falar comigo, prefiro o e-mail: costumo responder em até dois dias úteis. Combinações de horário para orientação podem ser feitas por lá."
+    ]
+  },
+
+  /* ------------------------------------------------------------------ */
+  /* 2. AVISOS  (aparecem na página inicial, o primeiro em destaque)     */
+  /*    Para apagar um aviso, apague o bloco { ... }, inclusive a vírgula*/
+  /* ------------------------------------------------------------------ */
+  avisos: [
+    {
+      data:  "24/08/2026",
+      titulo:"Turma 2D — trabalho no lugar do Teste 1",
+      texto: "A turma 2D fará um trabalho em vez do Teste 1. Em grupos de até 4 alunos, com entrega na segunda-feira, 31/08. A proposta completa está na aba Materiais, no bloco da Turma 2D."
+    },
+    {
+      data:  "24/08/2026",
+      titulo:"Geometria 2B e 2D — prova do 1º trimestre em 31/08",
+      texto: "A prova do 1º trimestre será em 31/08, dentro da Semana de Provas (31/08 a 05/09). A lista de revisão e o gabarito comentado já estão disponíveis na aba Materiais."
+    },
+    {
+      data:  "12/08/2026",
+      titulo:"Turma de terça — plano de aula sobre a subtração",
+      texto: "Elaborar um plano de aula sobre as três interpretações da subtração, envolvendo recursos pictóricos, retas numéricas e o algoritmo. Trabalho individual. Pode ser entregue impresso ou em formato digital. Prazo: a próxima aula, 18/08."
+    },
+    {
+      data:  "09/08/2026",
+      titulo:"Página das disciplinas no ar",
+      texto: "A partir de agora, planos de curso, cronogramas, listas e materiais de apoio ficam reunidos aqui. Confiram sempre a data do aviso para saber se é recente."
+    }
+
+    // Para publicar um novo aviso, copie o bloco acima (do { até o }), cole AQUI
+    // e ponha uma vírgula entre os dois. Avisos mais novos ficam sempre no topo.
+  ],
+
+  /* ------------------------------------------------------------------ */
+  /* 3. DISCIPLINAS                                                      */
+  /*                                                                     */
+  /*    Cada bloco { ... } é uma disciplina.                             */
+  /*    Para criar outra, copie um bloco inteiro (do { até },) e cole    */
+  /*    logo abaixo, depois troque os textos.                            */
+  /* ------------------------------------------------------------------ */
+  disciplinas: [
+
+    {
+      // "instituicao" agrupa as disciplinas na página. Turmas com o mesmo
+      // texto aqui aparecem juntas, sob um mesmo título.
+      instituicao: "Licenciatura em Matemática — UERJ",
+
+      codigo:  "CAP06-08897",
+      nome:    "Práticas Pedagógicas de Matemática I",
+      periodo: "2026.1",
+      turma:   "Licenciatura em Matemática — duas turmas",
+      horario: "Turma de segunda, 18h–19h30 · Turma de terça, 10h40–12h30",
+      sala:    "",   // preencha quando souber a sala de aula; vazio = não aparece
+      resumo:  "Aprofundamento pedagógico dos conteúdos matemáticos do Ensino Fundamental, nas vertentes teórica, prática e metodológica.",
+
+      // Ementa e objetivo oficiais da disciplina.
+      ementa: "Operações em conjuntos numéricos. Transformações no plano. Geometria e medida. Grandezas proporcionais.",
+
+      objetivos: [
+        "Propiciar o aprofundamento dos conhecimentos pedagógicos dos conteúdos matemáticos, respeitando as vertentes teórica, prática e metodológica, aplicados ao Ensino Fundamental."
+      ],
+
+      avaliacao: "A avaliação é contínua ao longo do semestre. São considerados os trabalhos entregues, a presença nas aulas e o desenvolvimento dos planos de aula e das notas de aula.",
+
+      // Bibliografia sugerida por tema — confira as edições e ajuste à lista oficial.
+      bibliografia: [
+        "CARAÇA, Bento de Jesus. Conceitos fundamentais da matemática. Lisboa: Gradiva.",
+        "FERREIRA, Jamil. A construção dos números. Rio de Janeiro: SBM. (Coleção Textos Universitários)",
+        "LIMA, Elon Lages. Isometrias. Rio de Janeiro: SBM. (Coleção do Professor de Matemática)",
+        "LIMA, Elon Lages. Medida e forma em geometria: comprimento, área, volume e semelhança. Rio de Janeiro: SBM.",
+        "LIMA, Elon Lages. Matemática e ensino. Rio de Janeiro: SBM.",
+        "VAN DE WALLE, John A. Matemática no ensino fundamental: formação de professores e aplicação em sala de aula. Porto Alegre: Artmed, 2009.",
+        "LORENZATO, Sergio. Para aprender matemática. Campinas: Autores Associados, 2006.",
+        "BRASIL. Base Nacional Comum Curricular. Brasília: MEC, 2018."
+      ],
+
+      // São DUAS turmas, cada uma com seu calendário. Cada bloco abaixo
+      // vira uma tabela na página da disciplina.
+      // Em "tipo" você pode escrever "feriado" ou "exame" para destacar a linha.
+      cronogramas: [
+
+        { titulo: "Turma de segunda-feira — 18h às 19h30",
+          aulas: [
+            { data: "10/08", tema: "Apresentação da disciplina, do plano de trabalho e dos critérios de avaliação. O conhecimento especializado do professor de Matemática" },
+            { data: "17/08", tema: "Os sentidos da soma e da subtração" },
+            { data: "24/08", tema: "Os sentidos da multiplicação" },
+            { data: "31/08", tema: "Os sentidos da divisão" },
+            { data: "07/09", tema: "Independência do Brasil — não há aula", tipo: "feriado" },
+            { data: "14/09", tema: "O conjunto dos números inteiros" },
+            { data: "21/09", tema: "Razão e proporção nos anos finais. O conjunto dos números racionais" },
+            { data: "28/09", tema: "O salto algébrico" },
+            { data: "05/10", tema: "Sistemas de equações. Estatística e probabilidade nos anos finais" },
+            { data: "12/10", tema: "Nossa Senhora Aparecida — não há aula", tipo: "feriado" },
+            { data: "19/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
+            { data: "26/10", tema: "Exame final", tipo: "exame" }
+          ]
+        },
+
+        { titulo: "Turma de terça-feira — 10h40 às 12h30",
+          aulas: [
+            { data: "11/08", tema: "Apresentação da disciplina, do plano de trabalho e dos critérios de avaliação. O conhecimento especializado do professor de Matemática" },
+            { data: "18/08", tema: "Os sentidos da soma e da subtração. Entrega do plano de aula sobre as três interpretações da subtração, envolvendo recursos pictóricos, retas numéricas e o algoritmo — individual, impresso ou digital" },
+            { data: "25/08", tema: "Os sentidos da multiplicação" },
+            { data: "01/09", tema: "Os sentidos da divisão" },
+            { data: "08/09", tema: "O conjunto dos números inteiros" },
+            { data: "15/09", tema: "Razão e proporção nos anos finais" },
+            { data: "22/09", tema: "O conjunto dos números racionais" },
+            { data: "29/09", tema: "O salto algébrico" },
+            { data: "06/10", tema: "Sistemas de equações" },
+            { data: "13/10", tema: "Estatística e probabilidade nos anos finais" },
+            { data: "20/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
+            { data: "27/10", tema: "Exame final", tipo: "exame" }
+          ]
+        }
+
+      ],
+
+      // Arquivos para os alunos baixarem.
+      // "arquivo" = nome do arquivo que você pôs na pasta materiais/
+      //   Ex.: "aula01.pdf"  ->  o site procura em  materiais/aula01.pdf
+      // Você também pode colar um link inteiro do Google Drive, começando com https://
+      materiais: [
+        { titulo: "Plano de aula — Conhecimento Especializado do Professor de Matemática (da Educação Infantil ao 6º ano)",
+          arquivo: "aula-conhecimento-especializado.pdf" }
+
+        // Os arquivos abaixo ainda não existem na pasta materiais/, por isso
+        // estão desativados com as duas barras. Quando você subir o arquivo,
+        // apague as duas barras do começo da linha e ponha uma vírgula na
+        // linha de cima. Confira que o nome bate com o do arquivo.
+        // ,{ titulo: "Plano de curso 2026.1",                arquivo: "ppm1-plano-de-curso.pdf" }
+        // ,{ titulo: "Texto de apoio — conjuntos numéricos", arquivo: "ppm1-conjuntos-numericos.pdf" }
+        // ,{ titulo: "Atividades — transformações no plano", arquivo: "ppm1-transformacoes.pdf" }
+      ]
+    },
+
+    {
+      // ----------------------------------------------------------------
+      // DISCIPLINA OCULTA NESTE SEMESTRE.
+      // A linha abaixo esconde a disciplina do site inteiro, sem apagar
+      // nada: ementa, cronograma e materiais continuam guardados aqui.
+      // Para mostrar de novo, troque true por false — ou apague a linha.
+      // ----------------------------------------------------------------
+      oculto: true,
+
+      instituicao: "Licenciatura em Matemática — UERJ",
+      codigo:  "[PREENCHER] código do fluxograma",
+      nome:    "Estágio III",
+      periodo: "2026.1",
+      turma:   "Licenciatura em Matemática — Estágio Supervisionado",
+      horario: "",   // sem horário fixo neste semestre
+      sala:    "",   // vazio = não aparece
+      resumo:  "Regência efetiva em turmas do Ensino Médio do CAp-UERJ, sob supervisão, com estudo do cotidiano escolar e pesquisa sobre TIC no ensino de Matemática.",
+
+      // Ementa e objetivo oficiais da disciplina.
+      ementa: "Assumir efetivamente a regência de turmas do Ensino Médio, de forma planejada e sob supervisão de um Professor de Matemática em atuação no CAp-UERJ; participar dos diferentes aspectos do cotidiano de sala de aula, tais como: preparação de aulas e outras atividades direcionadas à aplicação em sala de aula, pesquisas sobre temas matemáticos abordados de diferentes formas no processo de ensino/aprendizagem, organização de turmas etc. Analisar os desafios e dilemas do cotidiano escolar no tratamento de assuntos em que os alunos apresentam dificuldades de aprendizagem, sob orientação de um professor do CAp-UERJ. Pesquisar a aplicação de ferramentas da Tecnologia de Comunicação e Informação (TIC) no ensino de Matemática.",
+
+      objetivos: [
+        "Oferecer ao licenciando uma vivência participativa na situação real de trabalho.",
+        "Oportunizar a realização das competências exigidas para a atividade profissional docente."
+      ],
+
+      avaliacao: "[PREENCHER] Descreva aqui como o estágio é avaliado: carga horária, documentação obrigatória, regências, relatório e pesos.",
+
+      // Bibliografia sugerida — confira as edições e ajuste à lista oficial.
+      bibliografia: [
+        "PIMENTA, Selma Garrido; LIMA, Maria Socorro Lucena. Estágio e docência. São Paulo: Cortez, 2004.",
+        "TARDIF, Maurice. Saberes docentes e formação profissional. Petrópolis: Vozes, 2002.",
+        "BORBA, Marcelo de Carvalho; PENTEADO, Miriam Godoy. Informática e educação matemática. Belo Horizonte: Autêntica, 2001.",
+        "KENSKI, Vani Moreira. Educação e tecnologias: o novo ritmo da informação. Campinas: Papirus, 2007.",
+        "BRASIL. Base Nacional Comum Curricular: Ensino Médio. Brasília: MEC, 2018.",
+        "BRASIL. Lei nº 11.788, de 25 de setembro de 2008. Dispõe sobre o estágio de estudantes."
+      ],
+
+      cronograma: [
+        { data: "Semana 1",  tema: "Apresentação do estágio, documentação obrigatória e distribuição das turmas do Ensino Médio" },
+        { data: "Semana 2",  tema: "Ambientação no CAp-UERJ: observação das turmas e do professor supervisor" },
+        { data: "Semana 3",  tema: "Planejamento das primeiras regências, com o supervisor" },
+        { data: "Semana 4",  tema: "Início das regências — acompanhamento" },
+        { data: "Semana 5",  tema: "Encontro de orientação: os primeiros dilemas da regência" },
+        { data: "Semana 6",  tema: "Regências — organização da turma e gestão do tempo de aula" },
+        { data: "Semana 7",  tema: "Conteúdos em que os alunos mais tropeçam: diagnóstico e caminhos de intervenção" },
+        { data: "Semana 8",  tema: "Seminário intermediário: relatos de experiência das regências" },
+        { data: "Semana 9",  tema: "TIC no ensino de Matemática — panorama de ferramentas e critérios de escolha" },
+        { data: "Semana 10", tema: "TIC — desenho da pesquisa: recorte, referências e metodologia" },
+        { data: "Semana 11", tema: "Regências com uso de TIC — aplicação e registro" },
+        { data: "Semana 12", tema: "Encontro de orientação: análise crítica da própria prática" },
+        { data: "Semana 13", tema: "Estrutura e escrita do relatório de estágio" },
+        { data: "Semana 14", tema: "Apresentação da pesquisa sobre TIC" },
+        { data: "Semana 15", tema: "Entrega do relatório final e avaliação do semestre" }
+      ],
+
+      materiais: [
+        { titulo: "Plano de curso 2026.1",                arquivo: "estagio3-plano-de-curso.pdf" },
+        { titulo: "Termo de compromisso de estágio",      arquivo: "termo-de-compromisso.pdf" },
+        { titulo: "Ficha de frequência",                  arquivo: "ficha-frequencia.pdf" },
+        { titulo: "Roteiro do relatório de estágio",      arquivo: "roteiro-relatorio.pdf" },
+        { titulo: "Roteiro da pesquisa sobre TIC",        arquivo: "roteiro-pesquisa-tic.pdf" }
+      ]
+    }
+
+    ,
+
+    /* ------------------------------------------------------------------ */
+    /*  GEOMETRIA ESPACIAL — Ensino Médio do CAp-UERJ, turmas 2B e 2D      */
+    /*  Conteúdos e datas tirados do seu planejamento pós-greve            */
+    /*  (planilha "Geometria Espacial (replanejado pos-greve)", 21/08).    */
+    /* ------------------------------------------------------------------ */
+    {
+      instituicao: "Ensino Médio — CAp-UERJ",
+      codigo:  "",
+      nome:    "Geometria Espacial",
+      periodo: "2º ano do Ensino Médio",
+      turma:   "Turmas 2B e 2D",
+      horario: "",   // sem dias e horários, por opção
+      sala:    "",
+      resumo:  "Programa de Geometria Espacial das turmas 2B e 2D, com o calendário de avaliações e o material de estudo para download.",
+
+      // Vazios de propósito: as seções correspondentes não aparecem na
+      // página. Para publicar alguma, é só escrever entre as aspas.
+      ementa: "",
+      objetivos: [],
+      avaliacao: "",
+      bibliografia: [],
+
+      conteudos: [
+        "Unidade 1 — Geometria de posição: conceitos primitivos e postulados; determinação do plano; posições relativas entre retas e planos; paralelismo e perpendicularidade no espaço; ângulos entre retas e retas reversas.",
+        "Unidade 1 — Projeção ortogonal.",
+        "Unidade 1 — Distâncias no espaço (ponto–reta, ponto–plano e entre retas reversas), ângulos no espaço e triedros.",
+        "Unidade 2 — Poliedros convexos, relação de Euler e poliedros de Platão.",
+        "Unidade 2 — Prismas: elementos, secções e áreas. Princípio de Cavalieri e volume do prisma.",
+        "Unidade 2 — Pirâmides: elementos, áreas, volume e tronco de pirâmide.",
+        "Unidade 2 — Cilindro: áreas e volume.",
+        "Unidade 2 — Cone: áreas e volume; tronco de cone.",
+        "Unidade 2 — Esfera: área e volume; fuso e cunha esféricos; sólidos inscritos e circunscritos.",
+        "Unidade 2 — Sólidos compostos e sólidos de revolução.",
+        "Fechamento — Aplicações em questões de ENEM e vestibular, e revisão geral."
+      ],
+
+      cronogramas: [
+        { titulo: "Calendário de avaliações — 2B e 2D",
+          aulas: [
+            { data: "17/08/2026", tema: "Teste 1 — Geometria de posição, projeções e ângulos" },
+            { data: "31/08/2026", tema: "Prova do 1º trimestre" },
+            { data: "19/10/2026", tema: "Teste 2 — poliedros e prismas. Neste dia é entregue a proposta do trabalho aos grupos" },
+            { data: "23/11/2026", tema: "Apresentação dos trabalhos do 2º trimestre" },
+            { data: "25/01/2027", tema: "Prova do 2º trimestre" },
+            { data: "08/03/2027", tema: "Teste 3 — esfera e corpos redondos" },
+            { data: "22/03/2027", tema: "Apresentação dos trabalhos finais. A proposta é entregue em 01/03" },
+            { data: "29/03/2027", tema: "Prova do 3º trimestre" }
+          ]
+        }
+      ],
+
+      // Materiais separados por turma. Cada bloco { titulo, itens } vira uma
+      // subseção. Para acrescentar um arquivo, ponha o PDF na pasta materiais/
+      // e copie uma linha de "itens", trocando o título e o nome do arquivo.
+      materiais: [
+
+        { titulo: "Para as duas turmas",
+          itens: [
+            { titulo: "Apostila — Geometria Espacial",                         arquivo: "geo-apostila-espacial.pdf" },
+            { titulo: "Lista de revisão 2B e 2D (24/08)",                      arquivo: "geo-lista-revisao-24-08.pdf" },
+            { titulo: "Lista de revisão 2B e 2D (24/08) — gabarito comentado", arquivo: "geo-lista-revisao-24-08-gabarito.pdf" },
+            { titulo: "Teste 1 — modelos A a D (aplicado na turma 2B)",        arquivo: "geo-teste1-modelos.pdf" }
+          ]
+        },
+
+        { titulo: "Turma 2B",
+          itens: [
+            { titulo: "Aula de revisão — Geometria de Posição",       arquivo: "geo-revisao-posicao.pdf" },
+            { titulo: "Aula 02 — Posições relativas entre retas e plano", arquivo: "geo-aula02-posicoes-relativas.pdf" },
+            { titulo: "Aula 03 — Ângulos",                            arquivo: "geo-aula03-angulos.pdf" },
+            { titulo: "Aula 04 — Projeção ortogonal sobre um plano",   arquivo: "geo-aula04-projecao-ortogonal.pdf" }
+          ]
+        },
+
+        { titulo: "Turma 2D",
+          itens: [
+            { titulo: "Trabalho substitutivo do Teste 1 — entrega em 31/08", arquivo: "geo-trabalho-2D.pdf" },
+            { titulo: "Lista de estudo — resumo e exercícios",               arquivo: "geo-lista-estudo-2D.pdf" }
+          ]
+        }
+
+      ]
+    },
+
+    /* ------------------------------------------------------------------ */
+    /*  CEFET-RJ                                                           */
+    /*  Também oculta. Mesmo procedimento da anterior.                     */
+    /* ------------------------------------------------------------------ */
+    {
+      oculto: true,
+
+      instituicao: "CEFET-RJ",
+      codigo:  "",
+      nome:    "Ensino de Matemática e estrutura de poder: identidade, raça e pertencimento",
+      periodo: "2026.1",
+      turma:   "[PREENCHER] curso e nível (graduação, pós, disciplina eletiva...)",
+      horario: "[PREENCHER] dias e horário",
+      sala:    "",
+      resumo:  "[PREENCHER] uma frase curta sobre o curso, que aparece no cartão.",
+
+      ementa: "[PREENCHER] a ementa do curso.",
+
+      objetivos: [
+        "[PREENCHER] primeiro objetivo.",
+        "[PREENCHER] segundo objetivo."
+      ],
+
+      avaliacao: "[PREENCHER] como o curso é avaliado.",
+
+      bibliografia: [
+        "[PREENCHER] as referências do curso."
+      ],
+
+      cronogramas: [
+        { titulo: "",
+          aulas: [
+            { data: "[PREENCHER]", tema: "[PREENCHER] tema do encontro" }
+          ]
+        }
+      ],
+
+      materiais: [
+      ]
+    }
+
+    // Para acrescentar outra disciplina: ponha uma vírgula depois do }
+    // logo acima e cole um bloco novo aqui.
+
+  ],
+
+  /* ------------------------------------------------------------------ */
+  /* 3B. PALESTRAS                                                       */
+  /*                                                                     */
+  /*  Enquanto esta lista estiver vazia, a aba "Palestras" nem aparece   */
+  /*  no menu do site. Para publicar a primeira, apague as duas barras   */
+  /*  // do começo de cada linha do exemplo abaixo e troque os textos.   */
+  /*                                                                     */
+  /*  Campos: "local" e "resumo" podem ficar em branco ("") e somem.     */
+  /*  Em "materiais", vale nome de arquivo da pasta materiais/ ou um     */
+  /*  link inteiro começando com https:// (slides, vídeo, notícia).      */
+  /* ------------------------------------------------------------------ */
+  palestras: [
+
+    // {
+    //   data:   "00/00/2026",
+    //   titulo: "Título da palestra",
+    //   evento: "Nome do evento, seminário ou congresso",
+    //   local:  "Instituição, cidade",
+    //   resumo: "Duas ou três linhas sobre o que você apresentou.",
+    //   materiais: [
+    //     { titulo: "Slides da palestra", arquivo: "palestra-slides.pdf" },
+    //     { titulo: "Gravação", arquivo: "https://youtube.com/..." }
+    //   ]
+    // }
+
+  ],
+
+  /* ------------------------------------------------------------------ */
+  /* 4. RODAPÉ                                                           */
+  /* ------------------------------------------------------------------ */
+  rodape: "Daniel de Oliveira Lima — Universidade do Estado do Rio de Janeiro."
+};
+</script>
+
+<!-- ==================================================================== -->
+<!--   FIM DA ÁREA DE EDIÇÃO.                                             -->
+<!--   Daqui para baixo é a "máquina" do site: cores, layout e            -->
+<!--   funcionamento. Você não precisa mexer em nada.                     -->
+<!-- ==================================================================== -->
+
+<style>
+  /* --------------------------------------------------------------
+     PALETA — cores tiradas dos logos que você mandou.
+     Para mudar o site inteiro de cor, basta trocar os códigos aqui.
+     -------------------------------------------------------------- */
+  :root{
+    --azul:#21418E;          /* azul do CAp-UERJ  */
+    --azul-claro:#0077BD;    /* azul da UERJ      */
+    --vinho:#C31F26;         /* vermelho do CAp-UERJ */
+    --ambar:#FFB806;         /* amarelo da Matemática Antirracista */
+    --ambar-escuro:#8A6200;  /* o mesmo amarelo, escurecido para texto */
+    --laranja:#EC6627;       /* laranja da tocha da UERJ */
+    --tinta:#141414;
+    --cinza:#5a5650;
+    --linha:#e6e0d2;
+    --papel:#FDFAF3;
+    --branco:#ffffff;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--papel);color:var(--tinta);
+    font-family:var(--sans);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  /* ---------- cabeçalho ---------- */
+  header.topo{background:var(--azul);color:#fff;padding:38px 0 0;
+    border-top:6px solid var(--ambar)}
+  header.topo h1{
+    font-family:var(--serif);font-size:29px;line-height:1.25;
+    margin:0 0 4px;font-weight:normal;letter-spacing:.2px;
+  }
+  header.topo .sub{color:#b9cbe4;font-size:15px;margin:0 0 26px}
+
+  nav{border-top:1px solid rgba(255,255,255,.16)}
+  nav ul{list-style:none;display:flex;flex-wrap:wrap;margin:0;padding:0}
+  nav a{
+    display:block;padding:13px 18px;color:#cbd9ea;text-decoration:none;
+    font-size:14.5px;letter-spacing:.4px;border-bottom:3px solid transparent;
+  }
+  nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
+  nav a.ativo{color:#fff;border-bottom-color:var(--ambar);font-weight:600}
+  nav li:first-child a{padding-left:0}
+  @media(max-width:560px){nav li:first-child a{padding-left:18px}}
+
+  /* ---------- estrutura ---------- */
+  main{padding:44px 0 70px;min-height:60vh}
+  section[hidden]{display:none}
+  h2.titulo{
+    font-family:var(--serif);font-size:25px;font-weight:normal;
+    margin:0 0 6px;color:var(--azul);
+  }
+  .legenda{color:var(--cinza);font-size:15px;margin:0 0 30px}
+  h3{font-family:var(--serif);font-size:19px;color:var(--azul);margin:32px 0 10px;font-weight:normal}
+
+  .cartao{
+    background:var(--branco);border:1px solid var(--linha);border-radius:3px;
+    padding:22px 24px;margin-bottom:16px;
+  }
+
+  /* ---------- avisos ---------- */
+  .aviso{border-left:5px solid var(--ambar);background:var(--branco);
+    border-top:1px solid var(--linha);border-right:1px solid var(--linha);
+    border-bottom:1px solid var(--linha);border-radius:0 3px 3px 0;
+    padding:18px 22px;margin-bottom:14px}
+  .aviso .data{font-size:12.5px;color:var(--ambar-escuro);letter-spacing:1px;text-transform:uppercase;font-weight:700}
+  .aviso h4{margin:4px 0 6px;font-size:17.5px;font-family:var(--serif);font-weight:normal;color:var(--tinta)}
+  .aviso p{margin:0;color:var(--cinza);font-size:16px}
+
+  /* ---------- grupos por instituição ---------- */
+  h3.grupo{
+    display:flex;align-items:center;gap:12px;margin:38px 0 14px;
+    font-size:16px;font-family:var(--sans);font-weight:700;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--azul);
+  }
+  h3.grupo::after{content:"";flex:1;height:2px;background:var(--ambar);opacity:.55}
+
+  /* ---------- palestras ---------- */
+  .palestra{
+    background:var(--branco);border:1px solid var(--linha);
+    border-left:5px solid var(--azul);border-radius:0 3px 3px 0;
+    padding:20px 24px;margin-bottom:16px;
+  }
+  .palestra .data{font-size:12.5px;color:var(--ambar-escuro);letter-spacing:1px;
+    text-transform:uppercase;font-weight:700}
+  .palestra h3{margin:5px 0 4px;font-size:20px}
+  .palestra .onde{margin:0 0 10px;font-size:14.5px;color:var(--vinho)}
+  .palestra p{margin:0 0 4px;color:var(--cinza);font-size:16px}
+  .palestra .mat{margin-top:14px}
+
+  /* ---------- cartões de disciplina ---------- */
+  .grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  a.disc{
+    display:block;text-decoration:none;color:inherit;background:var(--branco);
+    border:1px solid var(--linha);border-top:4px solid var(--ambar);border-radius:3px;
+    padding:22px 24px;transition:box-shadow .15s ease,transform .15s ease;
+  }
+  a.disc:hover{box-shadow:0 4px 16px rgba(33,65,142,.15);transform:translateY(-2px)}
+  a.disc .cod{font-size:12.5px;letter-spacing:1.2px;color:var(--cinza);text-transform:uppercase}
+  a.disc h4{font-family:var(--serif);font-size:19.5px;font-weight:normal;margin:5px 0 9px;color:var(--azul)}
+  a.disc p{margin:0 0 14px;font-size:15px;color:var(--cinza)}
+  a.disc .quando{font-size:14px;color:var(--tinta);border-top:1px solid var(--linha);padding-top:11px}
+  a.disc .seta{color:var(--vinho);font-size:14px;margin-top:10px;display:block}
+
+  /* ---------- ficha da disciplina ---------- */
+  .voltar{display:inline-block;margin-bottom:18px;color:var(--vinho);
+    text-decoration:none;font-size:14.5px}
+  .voltar:hover{text-decoration:underline}
+  .ficha{display:flex;flex-wrap:wrap;gap:10px 28px;padding:16px 0 20px;
+    border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);margin-bottom:8px}
+  .ficha div{font-size:14.5px}
+  .ficha span{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--cinza)}
+
+  ul.lista{padding-left:20px;margin:0}
+  ul.lista li{margin-bottom:7px}
+  ol.refs{padding-left:20px;margin:0}
+  ol.refs li{margin-bottom:9px;font-size:15.5px;line-height:1.55}
+
+  table{width:100%;border-collapse:collapse;font-size:15.5px;background:var(--branco)}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--linha)}
+  th{background:#F7F0DE;font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ambar-escuro);font-weight:700;
+     border-bottom:2px solid var(--ambar)}
+  td:first-child{white-space:nowrap;color:var(--cinza);width:1%}
+  .subcron{margin:24px 0 8px;font-weight:700;font-size:15px;color:var(--azul);
+    border-left:4px solid var(--ambar);padding-left:10px}
+  table + .subcron{margin-top:34px}
+  tr.feriado td{background:#F6F2E8;color:var(--cinza);font-style:italic}
+  tr.exame td{background:#FFF3D4;font-weight:700;color:var(--ambar-escuro)}
+  tr.exame td:first-child{color:var(--ambar-escuro)}
+
+  /* ---------- downloads ---------- */
+  a.baixar{
+    display:flex;align-items:center;gap:13px;background:var(--branco);
+    border:1px solid var(--linha);border-radius:3px;padding:13px 17px;
+    margin-bottom:9px;text-decoration:none;color:var(--tinta);font-size:16px;
+  }
+  a.baixar:hover{border-color:var(--ambar);background:#FFF9E9}
+  a.baixar .ico{
+    flex:0 0 30px;height:30px;border-radius:3px;background:var(--azul);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.5px;
+  }
+  a.baixar .ico.ext{background:var(--vinho)}
+  a.baixar .seta2{margin-left:auto;color:var(--cinza);font-size:14px}
+
+  /* ---------- sobre ---------- */
+  .contato{list-style:none;padding:0;margin:0}
+  .contato li{padding:11px 0;border-bottom:1px solid var(--linha);font-size:16px}
+  .contato li b{display:inline-block;min-width:150px;color:var(--cinza);font-weight:600;font-size:14px}
+  .botoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .botao{display:inline-block;background:var(--azul);color:#fff;
+    text-decoration:none;padding:11px 22px;border-radius:3px;font-size:15px}
+  .botao:hover{background:var(--azul-claro)}
+
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:baseline;
+    justify-content:space-between}
+  .rodape-links a{color:var(--azul);text-decoration:none;margin-left:18px;font-weight:600}
+  .rodape-links a:first-child{margin-left:0}
+  .rodape-links a:hover{text-decoration:underline}
+  @media(max-width:560px){.rodape-links a{margin:0 18px 0 0}}
+
+  .vazio{color:var(--cinza);font-style:italic;font-size:15.5px}
+
+  footer{border-top:4px solid var(--ambar);padding:26px 0 44px;
+    color:var(--cinza);font-size:14px;background:#F7F1E2}
+
+  @media print{
+    header.topo{background:#fff;color:#000}
+    nav,.voltar,footer{display:none}
+    section[hidden]{display:block !important}
+  }
+</style>
+</head>
+
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <h1 id="h-nome"></h1>
+    <p class="sub" id="h-sub"></p>
+  </div>
+  <nav>
+    <div class="wrap">
+      <ul>
+        <li><a href="#/inicio">Início</a></li>
+        <li><a href="#/disciplinas">Disciplinas</a></li>
+        <li><a href="#/materiais">Materiais</a></li>
+        <li id="nav-palestras"><a href="#/palestras">Palestras</a></li>
+        <li><a href="#/avisos">Avisos</a></li>
+        <li><a href="#/sobre">Sobre</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section id="pg-inicio"></section>
+  <section id="pg-disciplinas" hidden></section>
+  <section id="pg-ficha" hidden></section>
+  <section id="pg-materiais" hidden></section>
+  <section id="pg-palestras" hidden></section>
+  <section id="pg-avisos" hidden></section>
+  <section id="pg-sobre" hidden></section>
+</main>
+
+<footer><div class="wrap" id="rodape"></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  const C = window.CONFIG || {};
+  const prof = C.professor || {};
+  const discs = C.disciplinas || [];
+  const avisos = C.avisos || [];
+
+  // escapa texto para não quebrar o HTML se houver < ou &
+  const e = t => String(t == null ? "" : t)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+  const $ = id => document.getElementById(id);
+
+  // Disciplinas que aparecem no site, guardando a posição original de cada
+  // uma para os links não se embaralharem quando alguma estiver oculta.
+  const visiveis = () => discs.map((d, i) => ({ d: d, i: i })).filter(x => !x.d.oculto);
+
+  const palestras = C.palestras || [];
+
+  // Agrupa as disciplinas visíveis por instituição, na ordem em que
+  // aparecem na área de edição.
+  function grupos(){
+    const out = [];
+    visiveis().forEach(function(x){
+      const chave = x.d.instituicao || "";
+      let g = null;
+      for (let k = 0; k < out.length; k++) if (out[k].nome === chave) g = out[k];
+      if (!g) { g = { nome: chave, itens: [] }; out.push(g); }
+      g.itens.push(x);
+    });
+    return out;
+  }
+
+  function gradeAgrupada(){
+    return grupos().map(function(g){
+      return (g.nome ? '<h3 class="grupo">' + e(g.nome) + '</h3>' : '') +
+             '<div class="grade">' + g.itens.map(x => cartaoDisc(x.d, x.i)).join("") + '</div>';
+    }).join("");
+  }
+
+  /* ---------- cabeçalho e rodapé ---------- */
+  $("h-nome").textContent = prof.nome || "Disciplinas";
+  $("h-sub").textContent  = [prof.cargo, prof.unidade].filter(Boolean).join(" · ");
+  // Junta o campo antigo "lattes" (se ainda estiver preenchido) com a lista "links".
+  function todosLinks(){
+    const out = (C.professor && C.professor.links ? C.professor.links : []).slice();
+    if (prof.lattes) out.unshift({ titulo: "Currículo Lattes", url: prof.lattes });
+    return out.filter(l => l && l.url);
+  }
+
+  $("rodape").innerHTML =
+    '<span>' + e(C.rodape || "") + '</span>' +
+    (todosLinks().length
+      ? '<span class="rodape-links">' + todosLinks().map(function(l){
+          return '<a href="' + e(l.url) + '" target="_blank" rel="noopener">' + e(l.titulo) + '</a>';
+        }).join("") + '</span>'
+      : "");
+  if (prof.nome) document.title = prof.nome + " — Disciplinas";
+
+  /* ---------- helpers ---------- */
+  function linkMaterial(m){
+    const alvo = /^https?:\/\//i.test(m.arquivo || "") ? m.arquivo : "materiais/" + (m.arquivo || "");
+    const externo = /^https?:\/\//i.test(m.arquivo || "");
+    const ext = externo ? "LINK" : ((m.arquivo || "").split(".").pop() || "arq").toUpperCase().slice(0,4);
+    return '<a class="baixar" href="' + e(alvo) + '" target="_blank" rel="noopener">' +
+             '<span class="ico' + (externo ? " ext" : "") + '">' + e(ext) + '</span>' +
+             '<span>' + e(m.titulo) + '</span>' +
+             '<span class="seta2">' + (externo ? "abrir ↗" : "baixar ↓") + '</span>' +
+           '</a>';
+  }
+  // Aceita "materiais" como lista simples ou como grupos { titulo, itens }.
+  function gruposMat(d){
+    const m = d.materiais || [];
+    if (m.length && m[0] && m[0].itens) return m.filter(g => (g.itens||[]).length);
+    return m.length ? [{ titulo: "", itens: m }] : [];
+  }
+  function blocosMat(d){
+    return gruposMat(d).map(function(g){
+      return (g.titulo ? '<p class="subcron">' + e(g.titulo) + '</p>' : '') +
+             g.itens.map(linkMaterial).join("");
+    }).join("");
+  }
+
+  function blocoAviso(a){
+    return '<article class="aviso"><div class="data">' + e(a.data) + '</div>' +
+           '<h4>' + e(a.titulo) + '</h4><p>' + e(a.texto) + '</p></article>';
+  }
+  function cartaoDisc(d, i){
+    return '<a class="disc" href="#/disciplina/' + i + '">' +
+             '<div class="cod">' + [d.codigo, d.periodo].filter(Boolean).map(e).join(" · ") + '</div>' +
+             '<h4>' + e(d.nome) + '</h4>' +
+             '<p>' + e(d.resumo) + '</p>' +
+             ((d.horario || d.sala)
+               ? '<div class="quando">' + e(d.horario || "") +
+                 (d.horario && d.sala ? "<br>" : "") + e(d.sala || "") + '</div>'
+               : "") +
+             '<span class="seta">Ver a disciplina →</span>' +
+           '</a>';
+  }
+
+  /* ---------- páginas ---------- */
+  function pgInicio(){
+    const recentes = avisos.slice(0,2).map(blocoAviso).join("") ||
+      '<p class="vazio">Nenhum aviso no momento.</p>';
+    const grade = gradeAgrupada();
+    return '<h2 class="titulo">Bem-vindo</h2>' +
+      '<p class="legenda">Aqui você encontra o programa, o cronograma e o material de apoio das turmas que acompanho, além das palestras que tenho apresentado.</p>' +
+      '<h3>Avisos recentes</h3>' + recentes +
+      '<h3>Turmas neste período</h3>' +
+      (grade || '<p class="vazio">Nenhuma turma neste período.</p>');
+  }
+
+  function pgDisciplinas(){
+    const grade = gradeAgrupada();
+    return '<h2 class="titulo">Disciplinas e turmas</h2>' +
+      (grade
+        ? '<p class="legenda">Clique em uma turma para ver ementa, cronograma, bibliografia e materiais.</p>' + grade
+        : '<p class="vazio">Nenhuma turma neste período.</p>');
+  }
+
+  function pgPalestras(){
+    if (!palestras.length)
+      return '<h2 class="titulo">Palestras</h2><p class="vazio">Nenhuma palestra publicada ainda.</p>';
+    return '<h2 class="titulo">Palestras</h2>' +
+      '<p class="legenda">Apresentações em eventos, seminários e formações. Quando há slides ou gravação, o link está junto.</p>' +
+      palestras.map(function(p){
+        return '<article class="palestra">' +
+          (p.data ? '<div class="data">' + e(p.data) + '</div>' : '') +
+          '<h3>' + e(p.titulo) + '</h3>' +
+          ((p.evento || p.local)
+            ? '<p class="onde">' + [p.evento, p.local].filter(Boolean).map(e).join(' · ') + '</p>' : '') +
+          (p.resumo ? '<p>' + e(p.resumo) + '</p>' : '') +
+          ((p.materiais || []).length
+            ? '<div class="mat">' + p.materiais.map(linkMaterial).join("") + '</div>' : '') +
+        '</article>';
+      }).join("");
+  }
+
+  function pgFicha(i){
+    const d = discs[i];
+    if (!d) return '<h2 class="titulo">Disciplina não encontrada</h2>' +
+                   '<a class="voltar" href="#/disciplinas">← Voltar</a>';
+
+    let h = '<a class="voltar" href="#/disciplinas">← Todas as disciplinas</a>' +
+      '<h2 class="titulo">' + e(d.nome) + '</h2>' +
+      '<p class="legenda">' + [d.codigo, d.turma].filter(Boolean).map(e).join(" · ") + '</p>' +
+      '<div class="ficha">' +
+        (d.periodo ? '<div><span>Período</span>' + e(d.periodo) + '</div>' : "") +
+        (d.horario ? '<div><span>Horário</span>' + e(d.horario) + '</div>' : "") +
+        (d.sala    ? '<div><span>Local</span>'   + e(d.sala)    + '</div>' : "") +
+      '</div>';
+
+    if (d.ementa)  h += '<h3>Ementa</h3><p>' + e(d.ementa) + '</p>';
+    if ((d.objetivos||[]).length)
+      h += '<h3>Objetivos</h3><ul class="lista">' + d.objetivos.map(o => '<li>' + e(o) + '</li>').join("") + '</ul>';
+    if (d.avaliacao) h += '<h3>Avaliação</h3><p>' + e(d.avaliacao) + '</p>';
+    // Lista simples de conteúdos, para turmas que não têm cronograma por data.
+    if ((d.conteudos||[]).length)
+      h += '<h3>Conteúdo programático</h3><ul class="lista">' +
+           d.conteudos.map(c => '<li>' + e(c) + '</li>').join("") + '</ul>';
+    // Aceita "cronogramas" (várias turmas) ou "cronograma" (uma só).
+    const crons = d.cronogramas || (d.cronograma ? [{ aulas: d.cronograma }] : []);
+    if (crons.length){
+      h += '<h3>Cronograma de aulas</h3>';
+      crons.forEach(function(c){
+        if (c.titulo) h += '<p class="subcron">' + e(c.titulo) + '</p>';
+        h += '<table><thead><tr><th>Encontro</th><th>Tema</th></tr></thead><tbody>' +
+             (c.aulas||[]).map(a => '<tr' + (a.tipo ? ' class="' + e(a.tipo) + '"' : '') + '>' +
+               '<td>' + e(a.data) + '</td><td>' + e(a.tema) + '</td></tr>').join("") +
+             '</tbody></table>';
+      });
+    }
+    if ((d.bibliografia||[]).length)
+      h += '<h3>Bibliografia</h3><ol class="refs">' + d.bibliografia.map(b => '<li>' + e(b) + '</li>').join("") + '</ol>';
+    if (gruposMat(d).length) h += '<h3>Materiais</h3>' + blocosMat(d);
+    return h;
+  }
+
+  function pgMateriais(){
+    const blocos = visiveis().filter(x => gruposMat(x.d).length).map(x =>
+      '<h3>' + e(x.d.nome) + '</h3>' + blocosMat(x.d)).join("");
+    return '<h2 class="titulo">Materiais</h2>' +
+      '<p class="legenda">Slides, listas de exercícios e textos de apoio, organizados por disciplina.</p>' +
+      (blocos || '<p class="vazio">Nenhum material disponível ainda.</p>');
+  }
+
+  function pgAvisos(){
+    return '<h2 class="titulo">Avisos</h2>' +
+      '<p class="legenda">Datas de prova, mudanças de sala e prazos.</p>' +
+      (avisos.map(blocoAviso).join("") || '<p class="vazio">Nenhum aviso no momento.</p>');
+  }
+
+  function pgSobre(){
+    const bio = (prof.bio||[]).map(p => '<p>' + e(p) + '</p>').join("");
+    let contato = '<ul class="contato">';
+    if (prof.email)       contato += '<li><b>E-mail</b> <a href="mailto:' + e(prof.email) + '">' + e(prof.email) + '</a></li>';
+    if (prof.sala)        contato += '<li><b>Gabinete</b> ' + e(prof.sala) + '</li>';
+    if (prof.atendimento) contato += '<li><b>Atendimento</b> ' + e(prof.atendimento) + '</li>';
+    if (prof.unidade)     contato += '<li><b>Unidade</b> ' + e(prof.unidade) + '</li>';
+    contato += '</ul>';
+    const botoes = todosLinks().map(function(l){
+      return '<a class="botao" href="' + e(l.url) + '" target="_blank" rel="noopener">' +
+             e(l.titulo) + ' ↗</a>';
+    }).join("");
+    return '<h2 class="titulo">Sobre</h2>' +
+      '<p class="legenda">' + e(prof.nome) + (prof.cargo ? " · " + e(prof.cargo) : "") + '</p>' +
+      bio + '<h3>Contato</h3>' + contato +
+      (botoes ? '<div class="botoes">' + botoes + '</div>' : "");
+  }
+
+  /* ---------- navegação ---------- */
+  const secoes = ["inicio","disciplinas","ficha","materiais","palestras","avisos","sobre"];
+
+  // Sem palestras cadastradas, a aba some do menu.
+  if (!palestras.length) $("nav-palestras").hidden = true;
+
+  function mostrar(nome, html){
+    secoes.forEach(s => { $("pg-" + s).hidden = (s !== nome); });
+    $("pg-" + nome).innerHTML = html;
+    document.querySelectorAll("nav a").forEach(a => {
+      const alvo = nome === "ficha" ? "disciplinas" : nome;
+      a.classList.toggle("ativo", a.getAttribute("href") === "#/" + alvo);
+    });
+  }
+
+  function rotear(){
+    const r = (location.hash || "#/inicio").replace(/^#\/?/, "").split("/");
+    switch (r[0]) {
+      case "disciplinas": return mostrar("disciplinas", pgDisciplinas());
+      case "disciplina":  return mostrar("ficha", pgFicha(parseInt(r[1], 10)));
+      case "materiais":   return mostrar("materiais", pgMateriais());
+      case "palestras":   return mostrar("palestras", pgPalestras());
+      case "avisos":      return mostrar("avisos", pgAvisos());
+      case "sobre":       return mostrar("sobre", pgSobre());
+      default:            return mostrar("inicio", pgInicio());
+    }
+  }
+
+  window.addEventListener("hashchange", function(){ rotear(); window.scrollTo(0,0); });
+  rotear();
+})();
+</script>
+
+</body>
+</html>
