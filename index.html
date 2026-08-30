@@ -70,9 +70,21 @@ var CONFIG = {
   /*    Para apagar um aviso, apague o bloco { ... }, inclusive a vírgula*/
   /* ------------------------------------------------------------------ */
   avisos: [
-    // Os dois avisos das turmas 2B e 2D do CAp foram retirados junto com a
-    // disciplina. O texto deles está guardado no fim deste arquivo, num
-    // comentário, caso queira republicar.
+    {
+      data:  "26/08/2026",
+      titulo:"Geometria 2B e 2D — trabalhos anteriores à greve estão considerados",
+      texto: "Todos os trabalhos realizados antes da greve estão considerados, para todos os alunos das duas turmas. Não há nada daquele período a regularizar. A prova do 1º trimestre é em 31/08."
+    },
+    {
+      data:  "26/08/2026",
+      titulo:"Turma 2B — lista de revisão para a prova de 31/08",
+      texto: "A lista de revisão está na aba Materiais, no bloco da Turma 2B. Os exercícios cobrem exatamente o que cai na prova: geometria de posição, projeções, distâncias e ângulos. Façam com o caderno aberto e tragam as dúvidas para a aula."
+    },
+    {
+      data:  "26/08/2026",
+      titulo:"Turma 2D — trabalho substitutivo do Teste 1, entrega em 31/08",
+      texto: "A turma 2D faz um trabalho no lugar do Teste 1. É para todos, em grupos de até 4 alunos, com entrega na segunda-feira, 31/08. A proposta está na aba Materiais, no bloco da Turma 2D. O mesmo conteúdo cai na prova do 1º trimestre, então fazer o trabalho com calma é também estudar."
+    },
     {
       data:  "12/08/2026",
       titulo:"Turma de terça — plano de aula sobre a subtração",
@@ -178,7 +190,11 @@ var CONFIG = {
       // Você também pode colar um link inteiro do Google Drive, começando com https://
       materiais: [
         { titulo: "Plano de aula — Conhecimento Especializado do Professor de Matemática (da Educação Infantil ao 6º ano)",
-          arquivo: "aula-conhecimento-especializado.pdf" }
+          arquivo: "aula-conhecimento-especializado.pdf" },
+        { titulo: "Plano de aula e notas de aula — o que as interpretações da subtração revelam (slides)",
+          arquivo: "ppm1-plano-x-notas-de-aula.pdf" },
+        { titulo: "Modelo de plano de aula, com dicas de preenchimento (para editar)",
+          arquivo: "ppm1-modelo-plano-de-aula.docx" }
 
         // Os arquivos abaixo ainda não existem na pasta materiais/, por isso
         // estão desativados com as duas barras. Quando você subir o arquivo,
@@ -263,14 +279,6 @@ var CONFIG = {
     /*  (planilha "Geometria Espacial (replanejado pos-greve)", 21/08).    */
     /* ------------------------------------------------------------------ */
     {
-      // ----------------------------------------------------------------
-      // OCULTA a pedido. Nada foi apagado: conteúdo programático,
-      // calendário de avaliações e a lista de materiais continuam aqui.
-      // Para voltar ao ar, troque true por false — e lembre de subir os
-      // PDFs de novo para a pasta materiais-CAp.
-      // ----------------------------------------------------------------
-      oculto: true,
-
       instituicao: "Ensino Médio — CAp-UERJ",
       codigo:  "",
       nome:    "Geometria Espacial",
@@ -284,8 +292,9 @@ var CONFIG = {
       // página. Para publicar alguma, é só escrever entre as aspas.
       ementa: "",
       objetivos: [],
-      avaliacao: "",
       bibliografia: [],
+
+      avaliacao: "Todos os trabalhos realizados antes da greve estão considerados, para todos os alunos das duas turmas. A prova do 1º trimestre é em 31/08. Como preparação, a turma 2B tem a lista de revisão; a turma 2D faz o trabalho substitutivo do Teste 1, com entrega em 31/08. Os dois materiais estão logo abaixo.",
 
       conteudos: [
         "Unidade 1 — Geometria de posição: conceitos primitivos e postulados; determinação do plano; posições relativas entre retas e planos; paralelismo e perpendicularidade no espaço; ângulos entre retas e retas reversas.",
@@ -323,25 +332,20 @@ var CONFIG = {
 
         { titulo: "Para as duas turmas",
           itens: [
-            { titulo: "Lista de revisão 2B e 2D (24/08)",                      arquivo: "geo-lista-revisao-24-08.pdf" },
-            { titulo: "Lista de revisão 2B e 2D (24/08) — gabarito comentado", arquivo: "geo-lista-revisao-24-08-gabarito.pdf" },
-            { titulo: "Teste 1 — modelos A a D (aplicado na turma 2B)",        arquivo: "geo-teste1-modelos.pdf" }
+            { titulo: "Exercícios da aula 02",                            arquivo: "geo-exercicios-aula02.pdf" }
           ]
         },
 
         { titulo: "Turma 2B",
           itens: [
-            { titulo: "Aula de revisão — Geometria de Posição",       arquivo: "geo-revisao-posicao.pdf" },
-            { titulo: "Aula 02 — Posições relativas entre retas e plano", arquivo: "geo-aula02-posicoes-relativas.pdf" },
-            { titulo: "Aula 03 — Ângulos",                            arquivo: "geo-aula03-angulos.pdf" },
-            { titulo: "Aula 04 — Projeção ortogonal sobre um plano",   arquivo: "geo-aula04-projecao-ortogonal.pdf" }
+            { titulo: "Lista de revisão (24/08) — preparação para a prova", arquivo: "geo-lista-revisao-2B-24-08.pdf" }
           ]
         },
 
         { titulo: "Turma 2D",
           itens: [
-            { titulo: "Trabalho substitutivo do Teste 1 — entrega em 31/08", arquivo: "geo-trabalho-2D.pdf" },
-            { titulo: "Lista de estudo — resumo e exercícios",               arquivo: "geo-lista-estudo-2D.pdf" }
+            { titulo: "Trabalho substitutivo do Teste 1 — entrega em 31/08",           arquivo: "geo-trabalho-2D.pdf" },
+            { titulo: "Resumo e exercícios — preparação para a prova do 1º trimestre",  arquivo: "geo-lista-estudo-2D.pdf" }
           ]
         }
 
@@ -428,21 +432,8 @@ var CONFIG = {
 };
 
 /* --------------------------------------------------------------------
-   AVISOS DO CAp GUARDADOS (retirados do ar a pedido)
-
-   Para republicar, recorte os dois blocos abaixo e cole de volta dentro
-   de  avisos: [ ... ]  , lembrando das vírgulas entre eles.
-
-   {
-     data:  "24/08/2026",
-     titulo:"Turma 2D — trabalho no lugar do Teste 1",
-     texto: "A turma 2D fará um trabalho em vez do Teste 1. Em grupos de até 4 alunos, com entrega na segunda-feira, 31/08. A proposta completa está na aba Materiais, no bloco da Turma 2D."
-   },
-   {
-     data:  "24/08/2026",
-     titulo:"Geometria 2B e 2D — prova do 1º trimestre em 31/08",
-     texto: "A prova do 1º trimestre será em 31/08, dentro da Semana de Provas (31/08 a 05/09). A lista de revisão e o gabarito comentado já estão disponíveis na aba Materiais."
-   }
+   Os avisos do CAp que estavam guardados aqui já voltaram ao ar, na
+   lista  avisos: [ ... ]  lá em cima. Este espaço ficou livre.
 -------------------------------------------------------------------- */
 </script>
 
