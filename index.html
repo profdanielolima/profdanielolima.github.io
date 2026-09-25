@@ -71,6 +71,21 @@ var CONFIG = {
   /* ------------------------------------------------------------------ */
   avisos: [
     {
+      data:  "23/09/2026",
+      titulo:"PPM I — próxima entrega: 28/09 para a turma de segunda, 29/09 para a de terça",
+      texto: "Cada turma entrega na aula dela: a turma de segunda-feira em 28/09, a de terça-feira em 29/09. O trabalho é a reescrita da aula de números inteiros, o slide 21: retomem a folha do Passo 0, escrevam embaixo da primeira versão a nova explicação de (−3) × (−2) e o novo número de 1 a 6 na escala dos seis níveis, e entreguem as duas versões na mesma folha. O que se avalia aqui não é o acerto — é a distância entre a primeira versão e a segunda. Os slides da aula estão na aba Materiais. E, para ninguém ficar em dúvida sobre o que já foi pedido até aqui, a página da disciplina agora tem uma tabela \"Trabalhos da disciplina\" com todos os trabalhos do semestre e a situação de cada um."
+    },
+    {
+      data:  "23/09/2026",
+      titulo:"PPM I — material da aula de números inteiros",
+      texto: "Os slides da aula sobre o conjunto dos números inteiros estão na aba Materiais. A aula inteira é um ciclo PEP-M: começa com uma tarefa geradora em silêncio (5 − 7 e (−3) × (−2)) e só responde a ela no Passo 5. No meio do caminho, o que mais vale reler: um mesmo sinal carrega três significados — subtração, identificação de negativo e tomada do oposto —, e a regra dos sinais não é convenção nenhuma: é a única extensão da multiplicação de ℕ para ℤ que preserva as propriedades que já valiam."
+    },
+    {
+      data:  "13/09/2026",
+      titulo:"Geometria 2B e 2D — gabaritos comentados da prova e do trabalho",
+      texto: "Os gabaritos comentados já estão na aba Materiais: a prova do 1º trimestre de cada turma e, para a 2D, também o trabalho substitutivo do Teste 1. Não são só as respostas — cada questão traz o comentário do erro mais comum e o porquê. Confiram a sua prova ao lado do gabarito antes de me procurar com dúvidas; assim a conversa rende mais."
+    },
+    {
       data:  "07/09/2026",
       titulo:"PPM I — tarefa da aula de divisão: caderno de análise de erros",
       texto: "A tarefa da aula sobre divisão e racionais é o caderno de análise de erros: seis produções de estudantes para analisar em quatro colunas — o que o aluno fez, o que ele mobilizou corretamente, que obstáculo explica o erro, e que devolutiva você daria. Digo com todas as letras: são as colunas 2 e 4 que avaliam. Apontar o erro é a parte fácil; reconhecer o que o estudante já sabe e decidir o que dizer a ele é o trabalho do professor. A planilha para preencher e entregar está na aba Materiais. Na aula seguinte socializamos as produções 3 e 6."
@@ -172,7 +187,7 @@ var CONFIG = {
             { data: "07/09", tema: "Independência do Brasil — não há aula", tipo: "feriado" },
             { data: "14/09", tema: "O conjunto dos números inteiros" },
             { data: "21/09", tema: "Razão e proporção nos anos finais. O conjunto dos números racionais" },
-            { data: "28/09", tema: "O salto algébrico" },
+            { data: "28/09", tema: "O salto algébrico. Entrega da reescrita da explicação de (−3) × (−2) — a folha do Passo 0 com as duas versões e o novo nível de 1 a 6" },
             { data: "05/10", tema: "Sistemas de equações. Estatística e probabilidade nos anos finais" },
             { data: "12/10", tema: "Nossa Senhora Aparecida — não há aula", tipo: "feriado" },
             { data: "19/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
@@ -189,13 +204,56 @@ var CONFIG = {
             { data: "08/09", tema: "O conjunto dos números inteiros" },
             { data: "15/09", tema: "Razão e proporção nos anos finais" },
             { data: "22/09", tema: "O conjunto dos números racionais" },
-            { data: "29/09", tema: "O salto algébrico" },
+            { data: "29/09", tema: "O salto algébrico. Entrega da reescrita da explicação de (−3) × (−2) — a folha do Passo 0 com as duas versões e o novo nível de 1 a 6" },
             { data: "06/10", tema: "Sistemas de equações" },
             { data: "13/10", tema: "Estatística e probabilidade nos anos finais" },
             { data: "20/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
             { data: "27/10", tema: "Exame final", tipo: "exame" }
           ]
         }
+
+      ],
+
+      // ------------------------------------------------------------------
+      // TRABALHOS DA DISCIPLINA
+      //
+      // REGRA FIXA DA DISCIPLINA: cada turma entrega na aula dela.
+      // A turma de segunda entrega na segunda; a de terça, na terça.
+      // Por isso o campo "quando" traz sempre as duas datas.
+      // Vira uma tabela própria na página da disciplina, com o título
+      // "Trabalhos da disciplina".
+      // Em "situacao" escreva  "aberto"  ou  "entregue".
+      //   "aberto"   -> a linha fica destacada em amarelo (é o que falta entregar)
+      //   "entregue" -> a linha fica em cinza claro (já foi cobrado)
+      // Para acrescentar um trabalho novo, copie um bloco inteiro
+      // { ... } , cole abaixo e troque os textos.
+      // ------------------------------------------------------------------
+      trabalhos: [
+
+        { situacao: "aberto",
+          titulo:   "Reescrita da explicação de (−3) × (−2) — aula de números inteiros",
+          quando:   "Entrega na aula da sua turma — segunda 28/09 · terça 29/09",
+          detalhe:  "Retome a folha do Passo 0 (a que você escreveu em silêncio no começo da aula) e reescreva, embaixo da primeira versão, a explicação de (−3) × (−2) que você daria a um estudante do 7º ano. Escreva também o seu novo número de 1 a 6 na escala dos seis níveis de conhecimento do professor. Entregue as duas versões na mesma folha — a primeira e a reescrita. É o slide 21 dos slides da aula, que estão na aba Materiais." },
+
+        { situacao: "entregue",
+          titulo:   "Plano de aula — as três interpretações da subtração",
+          quando:   "Proposto em 17/08 e 18/08 · entregue na aula seguinte",
+          detalhe:  "Individual, impresso ou digital, contemplando recursos pictóricos, retas numéricas e o algoritmo. Modelo de plano de aula disponível na aba Materiais." },
+
+        { situacao: "entregue",
+          titulo:   "Reescrita de “Multiplicar é…” e as três produções da aula de multiplicação",
+          quando:   "Proposto em 24/08 e 25/08 · entregue na própria aula",
+          detalhe:  "As Atividades 1, 2 e 3 da aula, mais a reescrita final: a folha da Atividade 1 com a primeira versão e a versão reescrita no fechamento, entregues juntas." },
+
+        { situacao: "entregue",
+          titulo:   "Esboço da demonstração da distributividade",
+          quando:   "Proposto em 24/08 e 25/08 · para a semana seguinte",
+          detalhe:  "Esboçar por escrito a demonstração de (m + k) × n = m × n + k × n a partir da definição recursiva; representar as três propriedades com barras e apontar onde as barras deixam de funcionar; e trazer uma tarefa de multiplicação de um livro didático do Ensino Fundamental para análise coletiva." },
+
+        { situacao: "entregue",
+          titulo:   "Caderno de análise de erros",
+          quando:   "Proposto em 31/08 e 01/09",
+          detalhe:  "Seis produções de estudantes analisadas em quatro colunas — o que o aluno fez, o que mobilizou corretamente, que obstáculo explica o erro e que devolutiva você daria. O caderno e a planilha de registro estão na aba Materiais." }
 
       ],
 
@@ -214,6 +272,8 @@ var CONFIG = {
           arquivo: "ppm1-multiplicacao.pdf" },
         { titulo: "Aula — Divisão e racionais: do resto que sobra ao número que falta (slides)",
           arquivo: "ppm1-divisao-racionais.pdf" },
+        { titulo: "Aula — Números inteiros: quando o número ganha orientação (slides)",
+          arquivo: "ppm1-numeros-inteiros.pdf" },
         { titulo: "Tarefa — Caderno de análise de erros",
           arquivo: "ppm1-caderno-analise-de-erros.pdf" },
         { titulo: "Tarefa — Registro de análise de erros (planilha para preencher e entregar)",
@@ -357,7 +417,8 @@ var CONFIG = {
           itens: [
             { titulo: "Autoavaliação do 1º trimestre — responder até 10/09",
               arquivo: "https://docs.google.com/forms/d/e/1FAIpQLSfSRnp9fyH0aQvV6HfMYpM4AnC2nTRlIYfifwLVU3_Ko2H9Wg/viewform" },
-            { titulo: "Lista de revisão (24/08) — preparação para a prova", arquivo: "geo-lista-revisao-2B-24-08.pdf" }
+            { titulo: "Lista de revisão (24/08) — preparação para a prova", arquivo: "geo-lista-revisao-2B-24-08.pdf" },
+            { titulo: "Prova do 1º trimestre (31/08) — gabarito comentado",  arquivo: "geo-prova1tri-2B-gabarito.pdf" }
           ]
         },
 
@@ -366,7 +427,9 @@ var CONFIG = {
             { titulo: "Autoavaliação do 1º trimestre — responder até 10/09",
               arquivo: "https://docs.google.com/forms/d/e/1FAIpQLSfN4HcUUZC_cxN4fd25VVvp5OtSvvr129JyQ8w3gJvPUsx3Ag/viewform" },
             { titulo: "Trabalho substitutivo do Teste 1 — entrega em 31/08",           arquivo: "geo-trabalho-2D.pdf" },
-            { titulo: "Resumo e exercícios — preparação para a prova do 1º trimestre",  arquivo: "geo-lista-estudo-2D.pdf" }
+            { titulo: "Resumo e exercícios — preparação para a prova do 1º trimestre",  arquivo: "geo-lista-estudo-2D.pdf" },
+            { titulo: "Prova do 1º trimestre (31/08) — gabarito comentado",             arquivo: "geo-prova1tri-2D-gabarito.pdf" },
+            { titulo: "Trabalho substitutivo do Teste 1 — gabarito comentado",          arquivo: "geo-trabalho-2D-gabarito.pdf" }
           ]
         }
 
@@ -594,6 +657,19 @@ var CONFIG = {
   .subcron{margin:24px 0 8px;font-weight:700;font-size:15px;color:var(--azul);
     border-left:4px solid var(--ambar);padding-left:10px}
   table + .subcron{margin-top:34px}
+  /* ---------- tabela de trabalhos ---------- */
+  table.trabs td{vertical-align:top}
+  table.trabs td.sit{white-space:nowrap;font-weight:700;font-size:13px;
+    letter-spacing:.6px;text-transform:uppercase;width:1%}
+  table.trabs .tquando{display:block;margin-top:3px;font-size:13.5px;color:var(--cinza)}
+  table.trabs .tdet{display:block;margin-top:7px;font-size:15px;color:var(--cinza)}
+  tr.tr-aberto td{background:#FFF3D4}
+  tr.tr-aberto td.sit{color:var(--ambar-escuro)}
+  tr.tr-aberto td strong{color:var(--tinta)}
+  tr.tr-entregue td{background:#F7F7F4}
+  tr.tr-entregue td.sit{color:var(--cinza);font-weight:normal}
+  tr.tr-entregue td strong{font-weight:normal;color:var(--cinza)}
+
   tr.feriado td{background:#F6F2E8;color:var(--cinza);font-style:italic}
   tr.exame td{background:#FFF3D4;font-weight:700;color:var(--ambar-escuro)}
   tr.exame td:first-child{color:var(--ambar-escuro)}
@@ -848,6 +924,21 @@ var CONFIG = {
                '<td>' + e(a.data) + '</td><td>' + e(a.tema) + '</td></tr>').join("") +
              '</tbody></table>';
       });
+    }
+    // Trabalhos da disciplina (opcional): some sozinho se a lista não existir.
+    const trabs = d.trabalhos || [];
+    if (trabs.length){
+      h += '<h3>Trabalhos da disciplina</h3>';
+      h += '<table class="trabs"><thead><tr><th>Situação</th><th>Trabalho</th></tr></thead><tbody>' +
+        trabs.map(function(t){
+          const ab = (t.situacao === "aberto");
+          return '<tr class="' + (ab ? 'tr-aberto' : 'tr-entregue') + '">' +
+            '<td class="sit">' + (ab ? "A entregar" : "Já cobrado") + '</td>' +
+            '<td><strong>' + e(t.titulo || "") + '</strong>' +
+            (t.quando  ? '<span class="tquando">' + e(t.quando) + '</span>' : "") +
+            (t.detalhe ? '<span class="tdet">'   + e(t.detalhe) + '</span>' : "") +
+            '</td></tr>';
+        }).join("") + '</tbody></table>';
     }
     if ((d.bibliografia||[]).length)
       h += '<h3>Bibliografia</h3><ol class="refs">' + d.bibliografia.map(b => '<li>' + e(b) + '</li>').join("") + '</ol>';
