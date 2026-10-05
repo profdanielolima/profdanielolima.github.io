@@ -71,6 +71,16 @@ var CONFIG = {
   /* ------------------------------------------------------------------ */
   avisos: [
     {
+      data:  "05/10/2026",
+      titulo:"PPM I — caderno de números racionais na aba Materiais",
+      texto: "O caderno de atividades sobre números racionais — \"o que significa dividir por uma fração\" — já está na aba Materiais, junto com a planilha de registro para preencher e entregar. São seis atividades, e todas têm duplo nível: um objeto matemático, que é o que você precisa compreender, e um objeto didático, que é a decisão de ensino que esse entendimento fundamenta. Resposta que trata só de um dos dois fica incompleta. A sexta é a mais exigente: nela vocês planejam um ciclo formativo inteiro. Escrevam à mão no caderno e transcrevam na planilha; tragam o caderno anotado para a socialização."
+    },
+    {
+      data:  "05/10/2026",
+      titulo:"PPM I — prazo final dos trabalhos em 20/10 e a planilha de conferência",
+      texto: "Atenção à planilha de trabalhos entregues, que será compartilhada por e-mail. É nela que cada um confere o que já consta como entregue em seu nome — confiram a sua linha assim que ela chegar, porque é a partir dela que eu fecho a avaliação. São quatro os trabalhos do semestre: o plano de aula sobre a subtração, o quadro síntese da trajetória, o trabalho sobre a multiplicação e a análise das tarefas de divisão. Na tabela da página da disciplina, cada trabalho traz o material correspondente para baixar — e vale reparar em dois: o trabalho sobre a multiplicação é o slide 21 da aula de números inteiros (a metateorização), e o de divisão é o caderno de análise de erros. Para o da multiplicação há agora uma folha de resposta pronta, com as cinco perguntas e o espaço para escrever; a tabela completa dos quatro trabalhos também está lá em PDF, para quem preferir imprimir. Quem estiver com alguma pendência tem até 20/10 para regularizar: esse é o prazo final, para todos os trabalhos e para as duas turmas. A lista completa está na página da disciplina, na tabela \"Trabalhos da disciplina\"."
+    },
+    {
       data:  "23/09/2026",
       titulo:"PPM I — próxima entrega: 28/09 para a turma de segunda, 29/09 para a de terça",
       texto: "Cada turma entrega na aula dela: a turma de segunda-feira em 28/09, a de terça-feira em 29/09. O trabalho é a reescrita da aula de números inteiros, o slide 21: retomem a folha do Passo 0, escrevam embaixo da primeira versão a nova explicação de (−3) × (−2) e o novo número de 1 a 6 na escala dos seis níveis, e entreguem as duas versões na mesma folha. O que se avalia aqui não é o acerto — é a distância entre a primeira versão e a segunda. Os slides da aula estão na aba Materiais. E, para ninguém ficar em dúvida sobre o que já foi pedido até aqui, a página da disciplina agora tem uma tabela \"Trabalhos da disciplina\" com todos os trabalhos do semestre e a situação de cada um."
@@ -190,7 +200,7 @@ var CONFIG = {
             { data: "28/09", tema: "O salto algébrico. Entrega da reescrita da explicação de (−3) × (−2) — a folha do Passo 0 com as duas versões e o novo nível de 1 a 6" },
             { data: "05/10", tema: "Sistemas de equações. Estatística e probabilidade nos anos finais" },
             { data: "12/10", tema: "Nossa Senhora Aparecida — não há aula", tipo: "feriado" },
-            { data: "19/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
+            { data: "19/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre. Prazo final para a entrega de todos os trabalhos: 20/10" },
             { data: "26/10", tema: "Exame final", tipo: "exame" }
           ]
         },
@@ -207,7 +217,7 @@ var CONFIG = {
             { data: "29/09", tema: "O salto algébrico. Entrega da reescrita da explicação de (−3) × (−2) — a folha do Passo 0 com as duas versões e o novo nível de 1 a 6" },
             { data: "06/10", tema: "Sistemas de equações" },
             { data: "13/10", tema: "Estatística e probabilidade nos anos finais" },
-            { data: "20/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre" },
+            { data: "20/10", tema: "Teorema de Pitágoras. Equação do 2º grau. Encerramento do semestre. Prazo final para a entrega de todos os trabalhos" },
             { data: "27/10", tema: "Exame final", tipo: "exame" }
           ]
         }
@@ -219,41 +229,43 @@ var CONFIG = {
       //
       // REGRA FIXA DA DISCIPLINA: cada turma entrega na aula dela.
       // A turma de segunda entrega na segunda; a de terça, na terça.
-      // Por isso o campo "quando" traz sempre as duas datas.
-      // Vira uma tabela própria na página da disciplina, com o título
-      // "Trabalhos da disciplina".
-      // Em "situacao" escreva  "aberto"  ou  "entregue".
-      //   "aberto"   -> a linha fica destacada em amarelo (é o que falta entregar)
-      //   "entregue" -> a linha fica em cinza claro (já foi cobrado)
-      // Para acrescentar um trabalho novo, copie um bloco inteiro
-      // { ... } , cole abaixo e troque os textos.
+      //
+      // "trabalhosAviso" é o quadro amarelo que aparece em cima da tabela.
+      // "trabalhos" é a tabela em si: um bloco { ... } por trabalho.
+      // Para acrescentar um trabalho novo, copie um bloco inteiro,
+      // cole abaixo e troque os textos. Se um trabalho não tiver
+      // "detalhe", a linha simplesmente mostra só o título.
+      //
+      // "arquivo" é opcional: põe um botão de download na linha do trabalho,
+      //   apontando para um arquivo da pasta materiais-CAp.
+      // "arquivoRotulo" é o texto desse botão (se não escrever, sai "baixar").
       // ------------------------------------------------------------------
+      trabalhosAviso: "Prazo final para a entrega de todos os trabalhos: 20/10. " +
+        "Fiquem atentos à planilha de trabalhos entregues, que será compartilhada por e-mail — " +
+        "é nela que cada um confere o que já consta como entregue em seu nome. " +
+        "Se faltar alguma coisa, há tempo de regularizar até 20/10.",
+
       trabalhos: [
 
-        { situacao: "aberto",
-          titulo:   "Reescrita da explicação de (−3) × (−2) — aula de números inteiros",
-          quando:   "Entrega na aula da sua turma — segunda 28/09 · terça 29/09",
-          detalhe:  "Retome a folha do Passo 0 (a que você escreveu em silêncio no começo da aula) e reescreva, embaixo da primeira versão, a explicação de (−3) × (−2) que você daria a um estudante do 7º ano. Escreva também o seu novo número de 1 a 6 na escala dos seis níveis de conhecimento do professor. Entregue as duas versões na mesma folha — a primeira e a reescrita. É o slide 21 dos slides da aula, que estão na aba Materiais." },
+        { titulo:  "Plano de aula sobre a subtração",
+          detalhe: "As três interpretações da subtração, envolvendo recursos pictóricos, retas numéricas e o algoritmo. Individual, impresso ou digital.",
+          arquivo: "ppm1-modelo-plano-de-aula.docx",
+          arquivoRotulo: "modelo de plano de aula (.docx)" },
 
-        { situacao: "entregue",
-          titulo:   "Plano de aula — as três interpretações da subtração",
-          quando:   "Proposto em 17/08 e 18/08 · entregue na aula seguinte",
-          detalhe:  "Individual, impresso ou digital, contemplando recursos pictóricos, retas numéricas e o algoritmo. Modelo de plano de aula disponível na aba Materiais." },
+        { titulo:  "Quadro síntese da trajetória",
+          detalhe: "Preencher a folha de trabalho em branco: para cada etapa — pré-escola, anos iniciais e a passagem ao 6º ano — relacionar os processos mentais em jogo, o que orienta a BNCC e qual conhecimento especializado (MTSK) o professor mobiliza. A legenda dos subdomínios está no rodapé da própria folha.",
+          arquivo: "ppm1-quadro-sintese-branco.pdf",
+          arquivoRotulo: "quadro síntese em branco" },
 
-        { situacao: "entregue",
-          titulo:   "Reescrita de “Multiplicar é…” e as três produções da aula de multiplicação",
-          quando:   "Proposto em 24/08 e 25/08 · entregue na própria aula",
-          detalhe:  "As Atividades 1, 2 e 3 da aula, mais a reescrita final: a folha da Atividade 1 com a primeira versão e a versão reescrita no fechamento, entregues juntas." },
+        { titulo:  "Trabalho sobre a multiplicação",
+          detalhe: "É o Passo 7 da aula de números inteiros — o slide 21: responder às cinco perguntas da metateorização e, no quadro final, reescrever embaixo da primeira versão a explicação de (−3) × (−2) que você daria a um estudante do 7º ano, anotando o novo nível de 1 a 6. As duas versões são entregues juntas. A folha de resposta já vem com as perguntas e o espaço para escrever.",
+          arquivo: "ppm1-metateorizacao-folha-de-resposta.pdf",
+          arquivoRotulo: "folha de resposta" },
 
-        { situacao: "entregue",
-          titulo:   "Esboço da demonstração da distributividade",
-          quando:   "Proposto em 24/08 e 25/08 · para a semana seguinte",
-          detalhe:  "Esboçar por escrito a demonstração de (m + k) × n = m × n + k × n a partir da definição recursiva; representar as três propriedades com barras e apontar onde as barras deixam de funcionar; e trazer uma tarefa de multiplicação de um livro didático do Ensino Fundamental para análise coletiva." },
-
-        { situacao: "entregue",
-          titulo:   "Caderno de análise de erros",
-          quando:   "Proposto em 31/08 e 01/09",
-          detalhe:  "Seis produções de estudantes analisadas em quatro colunas — o que o aluno fez, o que mobilizou corretamente, que obstáculo explica o erro e que devolutiva você daria. O caderno e a planilha de registro estão na aba Materiais." }
+        { titulo:  "Análise das tarefas de divisão",
+          detalhe: "É o caderno de análise de erros: seis produções de estudantes analisadas em quatro colunas — o que o aluno fez, o que mobilizou corretamente, que obstáculo explica o erro e que devolutiva você daria. A planilha de registro, para preencher e entregar, está na aba Materiais.",
+          arquivo: "ppm1-caderno-analise-de-erros.pdf",
+          arquivoRotulo: "caderno de análise de erros" }
 
       ],
 
@@ -277,7 +289,17 @@ var CONFIG = {
         { titulo: "Tarefa — Caderno de análise de erros",
           arquivo: "ppm1-caderno-analise-de-erros.pdf" },
         { titulo: "Tarefa — Registro de análise de erros (planilha para preencher e entregar)",
-          arquivo: "ppm1-registro-analise-de-erros.xlsx" }
+          arquivo: "ppm1-registro-analise-de-erros.xlsx" },
+        { titulo: "Caderno — Números racionais: o que significa dividir por uma fração (seis atividades)",
+          arquivo: "ppm1-caderno-numeros-racionais.pdf" },
+        { titulo: "Registro — Números racionais (planilha para preencher e entregar)",
+          arquivo: "ppm1-registro-numeros-racionais.xlsx" },
+        { titulo: "Folha de trabalho — Quadro-síntese da trajetória (em branco)",
+          arquivo: "ppm1-quadro-sintese-branco.pdf" },
+        { titulo: "Folha de resposta — Metateorização, o trabalho sobre a multiplicação (slide 21)",
+          arquivo: "ppm1-metateorizacao-folha-de-resposta.pdf" },
+        { titulo: "Tabela dos trabalhos do semestre, com o que se entrega em cada um",
+          arquivo: "ppm1-trabalhos-do-semestre.pdf" }
 
         // Os arquivos abaixo ainda não existem na pasta materiais/, por isso
         // estão desativados com as duas barras. Quando você subir o arquivo,
@@ -658,17 +680,25 @@ var CONFIG = {
     border-left:4px solid var(--ambar);padding-left:10px}
   table + .subcron{margin-top:34px}
   /* ---------- tabela de trabalhos ---------- */
+  .trabs-aviso{
+    background:#FFF3D4;border-left:5px solid var(--ambar);
+    border-radius:0 3px 3px 0;padding:14px 18px;margin:0 0 14px;
+    font-size:15.5px;color:var(--tinta);line-height:1.55;
+  }
   table.trabs td{vertical-align:top}
-  table.trabs td.sit{white-space:nowrap;font-weight:700;font-size:13px;
-    letter-spacing:.6px;text-transform:uppercase;width:1%}
+  table.trabs td.sit{white-space:nowrap;font-weight:700;font-size:15px;
+    color:var(--azul);width:1%;text-align:center}
   table.trabs .tquando{display:block;margin-top:3px;font-size:13.5px;color:var(--cinza)}
   table.trabs .tdet{display:block;margin-top:7px;font-size:15px;color:var(--cinza)}
+  table.trabs td strong{display:block}
+  table.trabs a.tarq{
+    display:inline-block;margin-top:9px;padding:5px 12px;
+    background:var(--branco);border:1px solid var(--azul-claro);border-radius:3px;
+    font-size:13.5px;font-weight:700;color:var(--azul);text-decoration:none;
+  }
+  table.trabs a.tarq:hover{background:var(--azul);color:var(--branco);border-color:var(--azul)}
   tr.tr-aberto td{background:#FFF3D4}
   tr.tr-aberto td.sit{color:var(--ambar-escuro)}
-  tr.tr-aberto td strong{color:var(--tinta)}
-  tr.tr-entregue td{background:#F7F7F4}
-  tr.tr-entregue td.sit{color:var(--cinza);font-weight:normal}
-  tr.tr-entregue td strong{font-weight:normal;color:var(--cinza)}
 
   tr.feriado td{background:#F6F2E8;color:var(--cinza);font-style:italic}
   tr.exame td{background:#FFF3D4;font-weight:700;color:var(--ambar-escuro)}
@@ -811,6 +841,13 @@ var CONFIG = {
   if (prof.nome) document.title = prof.nome + " — Disciplinas";
 
   /* ---------- helpers ---------- */
+  // Monta o endereço de um arquivo da pasta materiais (ou devolve o link
+  // inteiro, se já vier começando com http).
+  function alvoArq(arq){
+    if (/^https?:\/\//i.test(arq || "")) return arq;
+    const pasta = (C.pastaMateriais || "materiais").replace(/\/+$/, "");
+    return pasta + "/" + (arq || "");
+  }
   function linkMaterial(m){
     const pasta = (C.pastaMateriais || "materiais").replace(/\/+$/, "");
     const alvo = /^https?:\/\//i.test(m.arquivo || "") ? m.arquivo
@@ -929,14 +966,18 @@ var CONFIG = {
     const trabs = d.trabalhos || [];
     if (trabs.length){
       h += '<h3>Trabalhos da disciplina</h3>';
-      h += '<table class="trabs"><thead><tr><th>Situação</th><th>Trabalho</th></tr></thead><tbody>' +
-        trabs.map(function(t){
+      if (d.trabalhosAviso)
+        h += '<p class="trabs-aviso">' + e(d.trabalhosAviso) + '</p>';
+      h += '<table class="trabs"><thead><tr><th>Nº</th><th>Trabalho</th></tr></thead><tbody>' +
+        trabs.map(function(t,i){
           const ab = (t.situacao === "aberto");
-          return '<tr class="' + (ab ? 'tr-aberto' : 'tr-entregue') + '">' +
-            '<td class="sit">' + (ab ? "A entregar" : "Já cobrado") + '</td>' +
+          return '<tr' + (ab ? ' class="tr-aberto"' : '') + '>' +
+            '<td class="sit">' + (i+1) + '</td>' +
             '<td><strong>' + e(t.titulo || "") + '</strong>' +
             (t.quando  ? '<span class="tquando">' + e(t.quando) + '</span>' : "") +
             (t.detalhe ? '<span class="tdet">'   + e(t.detalhe) + '</span>' : "") +
+            (t.arquivo ? '<a class="tarq" href="' + e(alvoArq(t.arquivo)) + '" download>' +
+                         e(t.arquivoRotulo || "baixar") + ' ↓</a>' : "") +
             '</td></tr>';
         }).join("") + '</tbody></table>';
     }
