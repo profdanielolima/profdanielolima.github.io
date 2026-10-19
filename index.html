@@ -71,6 +71,16 @@ var CONFIG = {
   /* ------------------------------------------------------------------ */
   avisos: [
     {
+      data:  "19/10/2026",
+      titulo:"Geometria 2B e 2D: listas de poliedros e prismas, com gabaritos comentados",
+      texto: "Na página da disciplina, em Materiais, estão a lista de Relação de Euler e Poliedros de Platão e a lista de Prismas, cada uma com o seu gabarito comentado, e a folha de atividades da aula de prismas, com o resumo das fórmulas. O gabarito não serve só para conferir o número final: serve para comparar o seu caminho com uma resolução completa. Antes de abrir, tente a questão no caderno. Atenção: o Teste 2, sobre poliedros e prismas, passou para 26/10."
+    },
+    {
+      data:  "19/10/2026",
+      titulo:"PPM I: slides das aulas de números racionais e de grandezas proporcionais",
+      texto: "Os slides da aula de números racionais e os da aula de grandezas proporcionais estão na aba Materiais, junto com o caderno de atividades de grandezas proporcionais. São seis atividades em duplo nível, como nos cadernos anteriores: em cada uma você resolve uma questão matemática e analisa ou planeja uma tarefa para o Ensino Fundamental."
+    },
+    {
       data:  "05/10/2026",
       titulo:"PPM I — caderno de números racionais na aba Materiais",
       texto: "O caderno de atividades sobre números racionais — \"o que significa dividir por uma fração\" — já está na aba Materiais, junto com a planilha de registro para preencher e entregar. São seis atividades, e todas têm duplo nível: um objeto matemático, que é o que você precisa compreender, e um objeto didático, que é a decisão de ensino que esse entendimento fundamenta. Resposta que trata só de um dos dois fica incompleta. A sexta é a mais exigente: nela vocês planejam um ciclo formativo inteiro. Escrevam à mão no caderno e transcrevam na planilha; tragam o caderno anotado para a socialização."
@@ -299,7 +309,13 @@ var CONFIG = {
         { titulo: "Folha de resposta — Metateorização, o trabalho sobre a multiplicação (slide 21)",
           arquivo: "ppm1-metateorizacao-folha-de-resposta.pdf" },
         { titulo: "Tabela dos trabalhos do semestre, com o que se entrega em cada um",
-          arquivo: "ppm1-trabalhos-do-semestre.pdf" }
+          arquivo: "ppm1-trabalhos-do-semestre.pdf" },
+        { titulo: "Aula: Números racionais, o que significa dividir por uma fração (slides)",
+          arquivo: "ppm1-numeros-racionais.pdf" },
+        { titulo: "Aula: Grandezas proporcionais, o que se conserva quando tudo muda de tamanho (slides)",
+          arquivo: "ppm1-grandezas-proporcionais.pdf" },
+        { titulo: "Caderno: Grandezas proporcionais (seis atividades)",
+          arquivo: "ppm1-caderno-grandezas-proporcionais.pdf" }
 
         // Os arquivos abaixo ainda não existem na pasta materiais/, por isso
         // estão desativados com as duas barras. Quando você subir o arquivo,
@@ -399,7 +415,7 @@ var CONFIG = {
       objetivos: [],
       bibliografia: [],
 
-      avaliacao: "Todos os trabalhos realizados antes da greve estão considerados, para todos os alunos das duas turmas. A prova do 1º trimestre é em 31/08. Como preparação, a turma 2B tem a lista de revisão; a turma 2D faz o trabalho substitutivo do Teste 1, com entrega em 31/08. Os dois materiais estão logo abaixo.",
+      avaliacao: "Todos os trabalhos realizados antes da greve estão considerados, para todos os alunos das duas turmas. No 2º trimestre, cada lista de exercícios tem questões para entregar, indicadas na própria lista. As listas, os gabaritos comentados e a folha de atividades estão logo abaixo.",
 
       conteudos: [
         "Unidade 1 — Geometria de posição: conceitos primitivos e postulados; determinação do plano; posições relativas entre retas e planos; paralelismo e perpendicularidade no espaço; ângulos entre retas e retas reversas.",
@@ -420,7 +436,7 @@ var CONFIG = {
           aulas: [
             { data: "17/08/2026", tema: "Teste 1 — Geometria de posição, projeções e ângulos" },
             { data: "31/08/2026", tema: "Prova do 1º trimestre" },
-            { data: "19/10/2026", tema: "Teste 2 — poliedros e prismas. Neste dia é entregue a proposta do trabalho aos grupos" },
+            { data: "26/10/2026", tema: "Teste 2: poliedros e prismas. Neste dia é entregue a proposta do trabalho aos grupos" },
             { data: "23/11/2026", tema: "Apresentação dos trabalhos do 2º trimestre" },
             { data: "25/01/2027", tema: "Prova do 2º trimestre" },
             { data: "08/03/2027", tema: "Teste 3 — esfera e corpos redondos" },
@@ -434,6 +450,16 @@ var CONFIG = {
       // subseção. Para acrescentar um arquivo, ponha o PDF na pasta materiais/
       // e copie uma linha de "itens", trocando o título e o nome do arquivo.
       materiais: [
+
+        { titulo: "Turmas 2B e 2D: 2º trimestre",
+          itens: [
+            { titulo: "Lista: Relação de Euler e Poliedros de Platão",               arquivo: "geo-lista-euler-platao.pdf" },
+            { titulo: "Lista: Relação de Euler e Poliedros de Platão, gabarito comentado", arquivo: "geo-lista-euler-platao-gabarito.pdf" },
+            { titulo: "Folha de atividades: Prismas (elementos, áreas, Cavalieri e volume)", arquivo: "geo-folha-atividades-prismas.pdf" },
+            { titulo: "Lista: Prismas",                                              arquivo: "geo-lista-prismas.pdf" },
+            { titulo: "Lista: Prismas, gabarito comentado",                          arquivo: "geo-lista-prismas-gabarito.pdf" }
+          ]
+        },
 
         { titulo: "Turma 2B",
           itens: [
